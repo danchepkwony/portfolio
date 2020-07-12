@@ -1,0 +1,126 @@
+/* Getting rid of white space on the side*/
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*  Navigation bar */
+
+.Top-bar{
+    background-color: aqua;
+    border: none;
+    outline: none;
+    height: 60px;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    display: inline-flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.Top-logo{
+  position: relative;
+  display: inline;
+  text-align: center;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  color: #4C3549 ;
+  top: 6px;
+  size: 40px;
+  margin-left:12vw;
+  margin-right: 25vw;
+}
+
+.Top-navigation{
+    position: relative;
+    display: inline;
+    text-align: center;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 25px;
+    color: #4C3549;
+    top: 12px;
+    size: 40px;
+    margin-left: 5vw;
+  }
+
+  .Top-link{
+    text-decoration: none;
+  }
+
+.Top-dropbtn {
+  margin-top: 6px;
+  padding: 10px;
+  size: 40px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  margin-left: 30vw;
+}
+
+@media only screen and (max-width: 650px){
+  .Top-dropbtn{
+    margin-left: 20vw;
+  }
+}
+
+.Top-dropdown {
+  position: relative;
+}
+
+.Top-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  padding: 6px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 11;
+}
+
+.Top-dropdown-link:hover {background-color: #ddd;}
+
+.Top-dropdown:hover .Top-dropdown-content {display: block;}
+
+.Top-dropdown:hover .Top-dropbtn {background-color: #3e8e41;}
+
+/*  Start page */
+
+.Landing-top{
+  width: vw;
+  height: 700px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+@keyframes fade-in {
+  from {opacity: 0; margin-left: 10vw;}
+  to {opacity: 1; margin-left: 15vw;}
+}
+
+.Top-no-decoration{
+  text-decoration: none;
+  color: white;
+}
