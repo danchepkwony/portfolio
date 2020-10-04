@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './App.css'
 
 
@@ -32,28 +32,30 @@ class Navigation extends Component {
     const {wideEnough} = this.state;
 
     return (
-      <div>
+      <nav className = "Nav-bar"> 
       {wideEnough ? (
-        <div className = "Top-bar"> 
-          <div className = "Top-link"><p className = "Top-logo"> <Link to='/' className = "Top-no-decoration"> Logo </Link> </p></div>
-          <div className = "Top-link"><p className = "Top-navigation"> <Link to='/' className = "Top-no-decoration"> about me </Link> </p></div>
-          <div className = "Top-link"><p className = "Top-navigation"> <Link to='/portfolio' className = "Top-no-decoration"> portfolio </Link> </p></div>
-          <div className = "Top-link"><p className = "Top-navigation"> <Link to='/say-hi' className = "Top-no-decoration"> contact me </Link> </p></div>
-        </div>
-        ) : (
-        <div className = "Top-bar"> 
-          <Link to='/' className = "Top-link"> <p className = "Top-logo">Logo</p></Link>
-          <div className="Top-dropdown">
-            <button className="Top-dropbtn">Dropdown</button>
-              <ul className="Top-dropdown-content">
-                <li className = "Top-list"><Link to='/' className = "Top-dropdown-link"><p className = "Top-navigation">about me</p></Link></li>
-                <li className = "Top-list"><Link to='/portfolio' className = "Top-dropdown-link"><p className = "Top-navigation">portfolio</p></Link></li>
-                <li className = "Top-list"><Link to='/say-hi' className = "Top-dropdown-link"><p className = "Top-navigation">contact me</p></Link></li>
-              </ul>
+          <div style={{display: "flex"}}> 
+            <NavLink to="/" exact activeClassName="Nav-link-active" className = "Nav-link">home</NavLink>
+            <NavLink to='/portfolio' activeClassName="Nav-link-active" className = "Nav-link">portfolio</NavLink>
+            <NavLink to='/say-hi' activeClassName="Nav-link-active" className = "Nav-link" style={{marginRight: "50px"}}>contact</NavLink>
           </div>
-        </div>
+        ) : (
+          <div className="Nav-dropdown">
+          <button className="Nav-dropbtn">Dropdown</button>
+            <ul className="Nav-dropdown-content">
+              <li className = "Nav-dropdown-list">
+                <NavLink to='/' className = "Nav-dropdown-link">home</NavLink>
+              </li>
+              <li className = "Nav-list">
+                <NavLink to='/portfolio' className = "Nav-dropdown-link">portfolio</NavLink>
+              </li>
+              <li className = "Nav-list">
+                <NavLink to='/say-hi' className = "Nav-dropdown-link">contact</NavLink>
+              </li>
+            </ul>
+          </div>
       )}
-      </div>
+      </nav>
       );
   }
 };

@@ -1,126 +1,155 @@
-/* Getting rid of white space on the side*/
-
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: normal;
+:root {
+  --dark-blue: #46517C;
+  --red: #B35543;
+  --dark-blue: #46517C;
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
 }
 
-/*  Navigation bar */
-
-.Top-bar{
-    background-color: aqua;
-    border: none;
-    outline: none;
-    height: 60px;
-    overflow: hidden;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    display: inline-flex;
-    flex-direction: row;
-    align-content: space-between;
+.Nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5em;
+  background-color: white;
 }
 
-.Top-logo{
-  position: relative;
-  display: inline;
+.Nav-link {
+  width: 120px;
   text-align: center;
   text-decoration: none;
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  color: #4C3549 ;
-  top: 6px;
-  size: 40px;
-  margin-left:12vw;
-  margin-right: 25vw;
+  color: var(--dark-blue);
 }
 
-.Top-navigation{
-    position: relative;
-    display: inline;
-    text-align: center;
-    text-decoration: none;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 25px;
-    color: #4C3549;
-    top: 12px;
-    size: 40px;
-    margin-left: 5vw;
-  }
-
-  .Top-link{
-    text-decoration: none;
-  }
-
-.Top-dropbtn {
-  margin-top: 6px;
-  padding: 10px;
-  size: 40px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  border: none;
-  margin-left: 30vw;
+.Nav-link-active {
+  font-weight: bold;
 }
 
-@media only screen and (max-width: 650px){
-  .Top-dropbtn{
-    margin-left: 20vw;
-  }
-}
-
-.Top-dropdown {
+.Landing-about {
+  height: 600px;
+  width: 100%;
   position: relative;
-}
-
-.Top-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  padding: 6px;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 11;
-}
-
-.Top-dropdown-link:hover {background-color: #ddd;}
-
-.Top-dropdown:hover .Top-dropdown-content {display: block;}
-
-.Top-dropdown:hover .Top-dropbtn {background-color: #3e8e41;}
-
-/*  Start page */
-
-.Landing-top{
-  width: vw;
-  height: 700px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: aquamarine;
+  background-image: url("images/mandalaBg.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.Landing-about-info {
+  padding-top: 7.5%;
+  width: 100%;
+  color: var(--dark-blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes fade-in {
-  from {opacity: 0; margin-left: 10vw;}
-  to {opacity: 1; margin-left: 15vw;}
+@media (max-width: 768px) {
+  .Landing-about-info {
+    width: 80%;
+    font-size: 1em;
+    height: auto;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 
-.Top-no-decoration{
-  text-decoration: none;
+@media (min-width: 768px) {
+  .Landing-about-info {
+    height: 200px;
+    font-size: .8em;
+  }
+}
+
+@media (min-width: 992px) {
+  .Landing-about-info {
+    height: 200px;
+    font-size: 1em;
+    padding-bottom: 100px;
+  }
+}
+
+.Landing-about-info-name {
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 8em;
+}
+
+.Landing-about-info-text {
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+}
+
+.Landing-work {
+  height: 700px;
+  width: 100%;
+  position: relative;
+  background-color: var(--dark-blue);
+  font-size: 40px;
   color: white;
 }
+
+.Landing-work-info {
+  padding-top: 200px;
+  margin-right: 10%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: center;
+  height: 200px;
+}
+
+@media (max-width: 768px) {
+  .Landing-work-info {
+    width: 90%;
+    font-size: .75em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .Landing-work-info {
+    width: 90%;
+    font-size: 1em;
+  }
+}
+
+.Landing-work-examples {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: .6em;
+}
+/*# sourceMappingURL=App.css.map */

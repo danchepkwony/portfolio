@@ -5,19 +5,17 @@ import {
 } from 'react-router-dom';
  
 import Navigation from './Navigation';
-import MainPage from './Start';
+import HomePage from './Home';
 import PortfolioPage from './Portfolio';
-import MeetPage from './Meet';
+import ContactPage from './Contact';
 
  
 const App = () => (
     <Router>
-    <div>
     <Navigation />
-      <Route exact path='/' component={MainPage} />
+      <Route exact path='/' component={HomePage} />
       <Route path='/portfolio' component={PortfolioPage} />
-      <Route path='/say-hi' component={MeetPage} />
-    </div>
+      <Route path='/say-hi' component={ContactPage} />
   </Router>
 );
  

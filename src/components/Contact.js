@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import './App.css'
 
 
-class PortfolioPage extends Component {
+class ContactPage extends Component {
   render() {
     return (
       <div>
-        Portfolio Page - still working on it
+        Contact Me - still working on it
       </div>
     )
   }
 }
  
-export default PortfolioPage;
+export default ContactPage;
