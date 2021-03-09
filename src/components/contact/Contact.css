@@ -1,0 +1,76 @@
+@-webkit-keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Contact {
+  -webkit-animation: page-transition .25s ease-in forwards;
+          animation: page-transition .25s ease-in forwards;
+}
+
+.Contact .header {
+  margin-top: 15%;
+  text-align: center;
+  font-weight: 200;
+}
+
+.Contact .field {
+  font-size: 1.5rem;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.Contact .input {
+  width: 75%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  font-size: 1rem;
+  margin-left: 7.5%;
+  border: solid;
+  height: 100px;
+  margin-bottom: 15%;
+}
+
+.Contact .email-input {
+  height: 50px;
+  margin-bottom: 5%;
+  padding-top: 0;
+}
+
+.Contact .submit {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20%;
+}
+
+.Contact .submit .button {
+  font-size: 1.5rem;
+  border: none;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=Contact.css.map */

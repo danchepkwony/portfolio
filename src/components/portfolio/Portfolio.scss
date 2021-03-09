@@ -1,0 +1,34 @@
+@import "../variables";
+
+.Portfolio{
+    display: flex;
+    animation: page-transition .25s ease-in forwards;
+    
+    .Links{
+        display: grid;
+        width: 100%;
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+        margin-bottom: 20%;
+
+        @include breakpoint(extraLargeWidth){
+            margin-bottom: 15%;
+        }
+
+        .link{
+            text-decoration: none;
+            color: black;
+            font-size: 3rem;
+            margin: 2.5%;
+        }
+    }
+
+    .Spacer{
+        width: 0;
+    }
+
+    .Project{
+        width: 100%;
+    }
+}
+

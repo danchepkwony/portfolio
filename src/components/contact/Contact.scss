@@ -1,0 +1,52 @@
+@import "../variables";
+
+.Contact{
+    animation: page-transition .25s ease-in forwards;
+    
+    .header{
+        margin-top: 15%;
+        text-align: center;
+        font-weight: 200;
+    }
+
+    .field{
+        font-size: 1.5rem;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+
+    .input{
+        width: 75%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+        font-size: 1rem;
+        margin-left: 7.5%;
+        border: solid;
+        height: 100px;
+        margin-bottom: 15%;
+    }
+
+    .email-input{
+        height: 50px;
+        margin-bottom: 5%;
+        padding-top: 0;
+    }
+
+    .submit{
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        margin-bottom: 20%;
+
+        .button{
+            font-size: 1.5rem;
+            border: none;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 2.5%;
+            padding-bottom: 2.5%;
+            justify-content: center;
+        }
+    }
+}

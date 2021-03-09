@@ -1,0 +1,88 @@
+@-webkit-keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: #007cbe;
+  z-index: 2;
+}
+
+.Footer .container {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media (min-width: 992px) {
+  .Footer .container {
+    width: 30%;
+  }
+}
+
+.Footer .container .logo {
+  cursor: pointer;
+  -ms-flex-item-align: start;
+      align-self: start;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .Footer .container .logo {
+    width: 15%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+  }
+}
+
+.Footer .container .logo .image {
+  width: 80%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  -webkit-transition: width .25s, padding-top .25s, padding-bottom .25s;
+  transition: width .25s, padding-top .25s, padding-bottom .25s;
+}
+
+.Footer .container .logo:hover .image {
+  width: 90%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  -webkit-transition: width .25s, padding-top .25s, padding-bottom .25s;
+  transition: width .25s, padding-top .25s, padding-bottom .25s;
+}
+/*# sourceMappingURL=Footer.css.map */

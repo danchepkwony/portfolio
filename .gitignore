@@ -10,6 +10,7 @@
 
 # production
 /build
+/.fireabse
 
 # misc
 .DS_Store

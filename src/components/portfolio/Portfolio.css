@@ -1,0 +1,56 @@
+@-webkit-keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: page-transition .25s ease-in forwards;
+          animation: page-transition .25s ease-in forwards;
+}
+
+.Portfolio .Links {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+  margin-bottom: 20%;
+}
+
+@media (min-width: 1200px) {
+  .Portfolio .Links {
+    margin-bottom: 15%;
+  }
+}
+
+.Portfolio .Links .link {
+  text-decoration: none;
+  color: black;
+  font-size: 3rem;
+  margin: 2.5%;
+}
+
+.Portfolio .Spacer {
+  width: 0;
+}
+
+.Portfolio .Project {
+  width: 100%;
+}
+/*# sourceMappingURL=Portfolio.css.map */

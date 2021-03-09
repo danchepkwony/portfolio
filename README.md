@@ -2,15 +2,8 @@
 
 ## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-I created all the images/assets used in this project.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+and used React Intersection Observer (https://www.npmjs.com/package/react-intersection-observer) 
+and Lodash (for throttle) https://www.npmjs.com/package/lodash.throttle.
 
-## Installation
-
-To run the app in development mode:
-    
-    npm start
-
-## Contact
-
-dan.k.chepkwony@gmail.com
+Phone mockup made from Pixeden render https://www.pixeden.com/psd-mock-up-templates/gravity-psd-iphone-12-mockup-set.
