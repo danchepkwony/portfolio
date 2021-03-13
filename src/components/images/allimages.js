@@ -1,8 +1,8 @@
 const images = [
-    './images/arrows.jpg', 
-    './images/bars.jpg',
-    './images/codepen.jpg',
-    './images/devpost.jpg',
+    './images/arrows.png', 
+    './images/bars.png',
+    './images/codepen.png',
+    './images/devpost.png',
     './images/communicaid-mockup-bg.png'
   ];
   

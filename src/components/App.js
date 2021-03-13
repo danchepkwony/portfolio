@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router, 
   Route,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom';
 import throttle from "lodash.throttle";
 import ScrollToTop from './ScrollToTop';
@@ -19,12 +20,11 @@ const App = () => {
   useEffect(() => {
     const loadImage = image => {
       return new Promise((resolve, reject) => {
-        const loadImg = new Image()
-        loadImg.src = image
+        const loadImg = new Image();
+        loadImg.src = image;
         loadImg.onload = () =>
-          {resolve(image)}
-
-        loadImg.onerror = err => reject(err)
+          {resolve(image); console.log('working')};
+        loadImg.onerror = err => reject(err);
       })
     }
 
@@ -69,7 +69,8 @@ const App = () => {
           <Route exact path='/portfolio/health-radar' component={() => <PortfolioPage wideEnough={wideEnough} project="healthradar"/>}/>
           <Route exact path='/portfolio/dashboard' component={() => <PortfolioPage wideEnough={wideEnough} project="dashboard"/>}/>
           <Route exact path='/portfolio/status-board' component={() => <PortfolioPage wideEnough={wideEnough} project="statusboard"/>}/>
-        <Route path='/contact' component={ContactPage} />
+        <Route path='/contact' component={() => <ContactPage wideEnough={wideEnough}/>} />
+        <Redirect from='*' to='/' />
       </Switch>
       <Footer />
     </Router>

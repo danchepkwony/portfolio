@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import navBars from '../images/bars.png';
 import './Navigation.css';
-import { act } from 'react-dom/test-utils';
 
 const Navigation = (props) => {
 
@@ -14,11 +13,16 @@ const Navigation = (props) => {
   }
 
   const toggleDropdown = () => {
+    window.scrollTo(0, 0);
     animate("item", "slide_in");
     animate("break", "slide_in");
+    document.getElementById("root").style.overflow = "hidden";
+    document.getElementById("root").style.height = "100vh";
   }
 
   const exitDropdown = (e) => {
+    document.getElementById("root").style.overflow = "auto";
+    document.getElementById("root").style.height = "auto";
     animate("item", "slide_out");
     animate("break", "slide_out");
   }

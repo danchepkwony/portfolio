@@ -117,6 +117,13 @@
 
 .Home .Work {
   width: 100%;
+  margin-bottom: 25%;
+}
+
+@media (min-width: 992px) {
+  .Home .Work {
+    margin-bottom: 0;
+  }
 }
 
 .Home .Work .info {
@@ -143,6 +150,33 @@
     padding-top: 5%;
     padding-bottom: 5%;
   }
+}
+
+.Home .Work .mobile_slideshow {
+  width: 100%;
+  background-image: url("../images/orange_bar.png");
+  background-position: center;
+  background-size: 100% 175%;
+}
+
+.Home .Work .mobile_slideshow .full_portfolio {
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  padding: 7.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 45%;
+  text-align: center;
+  margin-left: 25%;
+  -webkit-box-shadow: 5px 5px black;
+          box-shadow: 5px 5px black;
+  font-size: 1.1rem;
+}
+
+.Home .Work .mobile_slideshow .full_portfolio .text {
+  text-decoration: none;
+  color: black;
 }
 
 .Home .Work .slideshow {
@@ -412,17 +446,6 @@
     width: 70%;
     margin-left: 15%;
   }
-}
-
-.Home .Self .container .headshot:hover {
-  right: 10px;
-  bottom: 10px;
-  -webkit-box-shadow: 20px 20px black;
-          box-shadow: 20px 20px black;
-  -webkit-transition: right .25s, bottom .25s, -webkit-box-shadow .25s;
-  transition: right .25s, bottom .25s, -webkit-box-shadow .25s;
-  transition: right .25s, bottom .25s, box-shadow .25s;
-  transition: right .25s, bottom .25s, box-shadow .25s, -webkit-box-shadow .25s;
 }
 
 .Home .Self .info {

@@ -21,73 +21,59 @@ const HomePage = (props) => {
     }
   }, [inView])
 
-  const onBackSlide = () => {
-    //setCurrentSlide((currentSlide == 3) ? 1 : currentSlide + 1);
+  const onSlideChange = (percent) => {
     var slideshow = document.getElementById("slideshow");
-    slideshow.style.right = "0%";
+    slideshow.style.right = percent;
   }
 
-  const onNextSlide = () => {
-    //setCurrentSlide((currentSlide == 3) ? 1 : currentSlide + 1);
-    var slideshow = document.getElementById("slideshow");
-    slideshow.style.right = "100%";
-  }
-
-  const onBackFinalSlide = () => {
-    //setCurrentSlide((currentSlide == 3) ? 1 : currentSlide + 1);
-    var slideshow = document.getElementById("slideshow");
-    slideshow.style.right = "100%";
-  }
-
-  const onFinalSlide = () => {
-    //setCurrentSlide((currentSlide == 3) ? 1 : currentSlide + 1);
-    var slideshow = document.getElementById("slideshow");
-    slideshow.style.right = "200%";
-  }
-
-  const transitionNav = (e) => {
+  const transitionNav = (e, link) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
-        props.history.push('/portfolio/communicaid');
+        props.history.push('/portfolio/' + link);
     },800)
   }
 
   const desktopSlideshow = (
-        //TODO: Create Slideshow Project Component and iterate between them programatically
+        //TODO: Clean this
         <div id = "slideshow" className = "slideshow">
           <div className="slideshow_project first_project">
-            <NavLink to='/portfolio/communicaid' className = "project" onClick={e => {transitionNav(e)}}>
+            <NavLink to='/portfolio/communicaid' className = "project" onClick={e => {transitionNav(e, 'communicaid')}}>
               <img className = "project_image" src={communicaid} alt="Example Project"></img>
               <h2 className = "project_title">Communicaid</h2>
             </NavLink>
             <div className = "container">
-              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={onNextSlide}></img>
+              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("100%")}></img>
             </div>
           </div>
           <div className="slideshow_project middle_project">
             <div className = "container container_middle flip">
-              <img className = "next_arrow" src={arrow} alt="Next Project"onClick={onBackSlide}></img>
+              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("0%")}></img>
             </div>
-            <NavLink to='/portfolio/status-board' className = "project project_middle">
+            <NavLink to='/portfolio/status-board' className = "project project_middle" onClick={e => {transitionNav(e, 'status-board')}}>
               <img className = "project_image" src={example} alt="Status Board"></img>
               <h2 className = "project_title">Status Board</h2>
             </NavLink>
             <div className = "container container_middle">
-              <img className = "next_arrow" src={arrow} alt="Next Project"onClick={onFinalSlide}></img>
+              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("200%")}></img>
             </div>
           </div>
           <div className="slideshow_project final_project">
             <div className = "container flip">
-              <img className = "next_arrow" src={arrow} alt="Next Project"onClick={onBackFinalSlide}></img>
+              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("100%")}></img>
             </div>
             <div className = "full_portfolio">
-              <NavLink to='/portfolio' className = "text">Full Portfolio</NavLink>
+              <NavLink to='/portfolio' className = "text" onClick={e => {transitionNav(e, '')}}> Full Portfolio</NavLink>
             </div>
           </div>
         </div>)
 
-  const mobileSlideshow = (<div></div>)
+  const mobileSlideshow = (
+        <div className = "mobile_slideshow">
+          <div className = "full_portfolio">
+            <NavLink to='/portfolio' className = "text"> View Portfolio</NavLink>
+          </div>
+        </div>)
 
   return (
     <div className = "Home">
@@ -98,12 +84,12 @@ const HomePage = (props) => {
             CHEPKWONY
           </h1>
           <p className = "description">
-            Junior Software Developer
+            Junior Full-stack Developer
           </p>
         </div>
         {props.wideEnough && 
         <div className = "shapes">
-            <img src={shapes} alt="shapes" />
+            <img src={shapes} alt="" />
         </div> }
       </div>
       <div className = "Work">
@@ -111,7 +97,7 @@ const HomePage = (props) => {
       </div>
       <div className = "Self">
         <div className = "container" ref={ref}>
-          <img src={headshot} id = "headshot" className = "headshot" alt="Headshot of me"  />
+          <img src={headshot} id = "headshot" className = "headshot" alt="Headshot of Dan Chepkwony"  />
         </div>
         <div className = "info">  
           <h2 className = "hi">HI, I'M DAN</h2>

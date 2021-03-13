@@ -2,51 +2,112 @@
 
 .Contact{
     animation: page-transition .25s ease-in forwards;
-    
-    .header{
-        margin-top: 15%;
-        text-align: center;
-        font-weight: 200;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(largeWidth){
+        height: auto;
     }
 
-    .field{
+    .Fail-Send{
+        position: absolute;
+        padding: 10%;
+        background-color: $orange;
+        box-shadow: 5px 5px black;
         font-size: 1.5rem;
-        margin-left: 5%;
-        margin-bottom: 5%;
+        display: none;
+          
+          .close-button {
+            font-weight: bold;
+            float: right;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+          }
     }
 
-    .input{
-        width: 75%;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-top: 5%;
-        font-size: 1rem;
-        margin-left: 7.5%;
-        border: solid;
-        height: 100px;
-        margin-bottom: 15%;
-    }
+    .Text{
+        @include breakpoint(largeWidth){
+            width: 50%;
+        }
 
-    .email-input{
-        height: 50px;
-        margin-bottom: 5%;
-        padding-top: 0;
-    }
+        .header{
+            margin-top: 15%;
+            text-align: center;
+            font-weight: 200;
+            font-size: 1.75rem;
 
-    .submit{
-        width: 100%;
-        display:flex;
-        justify-content: center;
-        margin-bottom: 20%;
+            @include breakpoint(largeWidth){
+                font-size: 2.5rem;
+            }
+        }
 
-        .button{
-            font-size: 1.5rem;
-            border: none;
+        .field{
+            font-size: 1.25rem;
+            margin-left: 5%;
+            margin-bottom: 5%;
+
+            @include breakpoint(largeWidth){
+                font-size: 1.5rem;
+            }
+        }
+
+        .input{
+            width: 75%;
             padding-left: 5%;
             padding-right: 5%;
-            padding-top: 2.5%;
-            padding-bottom: 2.5%;
+            padding-top: 5%;
+            font-size: 1rem;
+            margin-left: 7.5%;
+            border: solid;
+            height: 100px;
+            margin-bottom: 15%;
+
+            @include breakpoint(largeWidth){
+                font-size: 1.25rem;
+            }
+        }
+
+        .email-input{
+            height: 50px;
+            margin-bottom: 5%;
+            padding-top: 0;
+        }
+
+        .submit{
+            width: 100%;
+            display:flex;
             justify-content: center;
+            margin-bottom: 20%;
+
+            .button{
+                font-size: 1.5rem;
+                cursor: pointer;
+                border: none;
+                position: relative;
+                width: 50%;
+                padding-top: 2.5%;
+                padding-bottom: 2.5%;
+                justify-content: center;
+                background: white;
+                border: 3px solid black;
+                box-shadow: 5px 5px black;
+                bottom: 0;
+                right: 0;
+
+                transition: box-shadow .2s, bottom .2s, right .2s;
+            }
+
+            .button:hover{
+                box-shadow: 10px 10px black;
+                bottom: 5px;
+                right: 5px;
+
+                transition: box-shadow .2s, bottom .2s, right .2s;
+            }
         }
     }
 }

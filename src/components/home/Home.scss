@@ -83,6 +83,11 @@
 
     .Work{
         width: 100%;
+        margin-bottom: 25%;
+
+        @include breakpoint(largeWidth){
+            margin-bottom: 0;
+        }
 
         .info{
             margin: 0;
@@ -102,6 +107,33 @@
                 padding-top: 5%;
                 padding-bottom: 5%;
             }
+        }
+
+        .mobile_slideshow{
+            width: 100%; 
+            background-image: url("../images/orange_bar.png");
+            background-position: center;
+            background-size: 100% 175%;
+
+            .full_portfolio{
+                background-color: white;
+                text-decoration: none;
+                color: black;
+                padding: 7.5%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                width: 45%;
+                text-align: center;
+                margin-left: 25%;
+                box-shadow: 5px 5px black;
+                font-size: 1.1rem;
+
+                .text{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
         }
 
         .slideshow{
@@ -306,14 +338,6 @@
                     width: 70%;
                     margin-left: 15%;
                 }
-
-                transition: right .25s, bottom .25s, box-shadow .25s;
-            }
-
-            .headshot:hover{
-                right: 10px;
-                bottom: 10px;
-                box-shadow: 20px 20px black;
 
                 transition: right .25s, bottom .25s, box-shadow .25s;
             }

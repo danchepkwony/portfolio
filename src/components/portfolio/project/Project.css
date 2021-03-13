@@ -1,22 +1,152 @@
-.Project .container {
-  width: 55%;
+.Project {
+  margin-top: 5%;
+  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 15%;
+}
+
+.Project .header {
   margin-right: 2.5%;
+  margin-left: 2.5%;
+  width: 95%;
+}
+
+.Project .header .title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 200;
+  font-size: 2.75rem;
+}
+
+.Project .header .skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
-.Project .container .image {
+.Project .header .skills .skill:nth-child(1) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.Project .header .skills .skill:nth-child(2) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.Project .header .skills .skill:nth-child(3) {
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+
+.Project .header .skills .skill:nth-child(4) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.Project .header .skills .skill:nth-child(5) {
+  -webkit-animation-delay: 0.85s;
+          animation-delay: 0.85s;
+}
+
+.Project .header .skills .skill {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 10px;
+  list-style-type: none;
+  margin-right: 1.25%;
+  margin-bottom: 2.5%;
+  font-size: 1rem;
+  position: relative;
+  opacity: 0;
+  -webkit-animation: appear 0.35s cubic-bezier(0, 0, 0, 1) 0.1s forwards;
+          animation: appear 0.35s cubic-bezier(0, 0, 0, 1) 0.1s forwards;
+}
+
+.Project .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.Project .body .container {
+  width: 45%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+}
+
+.Project .body .container .image {
   width: 100%;
+  margin-top: 2.5%;
 }
 
-.Project .text {
-  width: 90%;
+.Project .body .text {
+  width: 45%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+}
+
+.Project .body .text .details {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  margin-top: 0;
+  margin-bottom: 7.5%;
+}
+
+.Project .body .text .link {
+  margin-left: 1.75%;
+  text-decoration: none;
+  font-size: 1.75rem;
+  color: black;
+  padding: 2.5%;
+  border: black 3px solid;
+  position: relative;
+  -webkit-box-shadow: 5px 5px black;
+          box-shadow: 5px 5px black;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: bottom .2s, right .2s, -webkit-box-shadow .2s;
+  transition: bottom .2s, right .2s, -webkit-box-shadow .2s;
+  transition: box-shadow .2s, bottom .2s, right .2s;
+  transition: box-shadow .2s, bottom .2s, right .2s, -webkit-box-shadow .2s;
+}
+
+.Project .body .text .link:hover {
+  -webkit-box-shadow: 10px 10px black;
+          box-shadow: 10px 10px black;
+  bottom: 5px;
+  right: 5px;
+  -webkit-transition: bottom .2s, right .2s, -webkit-box-shadow .2s;
+  transition: bottom .2s, right .2s, -webkit-box-shadow .2s;
+  transition: box-shadow .2s, bottom .2s, right .2s;
+  transition: box-shadow .2s, bottom .2s, right .2s, -webkit-box-shadow .2s;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    bottom: -10px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    bottom: -10px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=Project.css.map */

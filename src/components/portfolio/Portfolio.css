@@ -22,35 +22,69 @@
   display: flex;
   -webkit-animation: page-transition .25s ease-in forwards;
           animation: page-transition .25s ease-in forwards;
+  min-height: 100vh;
 }
 
 .Portfolio .Links {
-  display: -ms-grid;
-  display: grid;
   width: 100%;
   margin-top: 2.5%;
-  margin-left: 2.5%;
-  margin-bottom: 20%;
+}
+
+.Portfolio .Links .project .hover-container {
+  padding-left: 5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  width: 110%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s;
+}
+
+.Portfolio .Links .project .hover-container .container {
+  width: 0;
+  margin-right: 1%;
+  position: relative;
+  -webkit-transition: width .25s;
+  transition: width .25s;
+}
+
+.Portfolio .Links .project .hover-container .container .arrow {
+  width: 100%;
+  margin-left: 10%;
+}
+
+.Portfolio .Links .project .hover-container:hover {
+  background-color: #ffd639;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s;
+}
+
+.Portfolio .Links .project .hover-container:hover .container {
+  width: 2.5%;
+  -webkit-transition: width .25s;
+  transition: width .25s;
+}
+
+.Portfolio .Links .project .link {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+  -webkit-transition: color .25s;
+  transition: color .25s;
 }
 
 @media (min-width: 1200px) {
-  .Portfolio .Links {
-    margin-bottom: 15%;
+  .Portfolio .Links .project .link {
+    font-size: 2.5rem;
   }
-}
-
-.Portfolio .Links .link {
-  text-decoration: none;
-  color: black;
-  font-size: 3rem;
-  margin: 2.5%;
-}
-
-.Portfolio .Spacer {
-  width: 0;
-}
-
-.Portfolio .Project {
-  width: 100%;
 }
 /*# sourceMappingURL=Portfolio.css.map */
