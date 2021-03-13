@@ -11,7 +11,7 @@ const Project = (props) => (
       </div>
       <div className="body">
         <div className = "container">
-          <img className = "image" src = {props.img}/>
+          <img className = "image" src = {props.img} alt={"Image of " + props.title}/>
         </div>
         <div className = "text">
           <p className = "details">{props.description}</p>

@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-import { withRouter } from 'react-router'
-import example from '../images/project_placeholder.png';
+import { withRouter } from 'react-router';
 import headshot from '../images/headshot.jpg';
 import shapes from '../images/shapes.png';
 import communicaid from '../images/communicaid-mockup.png';
+import statusboard from '../images/statusboard.png';
 import arrow from '../images/arrows.png';
 import './Home.css';
 
@@ -51,7 +51,7 @@ const HomePage = (props) => {
               <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("0%")}></img>
             </div>
             <NavLink to='/portfolio/status-board' className = "project project_middle" onClick={e => {transitionNav(e, 'status-board')}}>
-              <img className = "project_image" src={example} alt="Status Board"></img>
+              <img className = "project_image" src={statusboard} alt="Status Board"></img>
               <h2 className = "project_title">Status Board</h2>
             </NavLink>
             <div className = "container container_middle">

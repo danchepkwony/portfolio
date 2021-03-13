@@ -23,7 +23,7 @@ const App = () => {
         const loadImg = new Image();
         loadImg.src = image;
         loadImg.onload = () =>
-          {resolve(image); console.log('working')};
+          {resolve(image)};
         loadImg.onerror = err => reject(err);
       })
     }

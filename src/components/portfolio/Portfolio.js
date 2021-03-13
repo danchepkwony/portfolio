@@ -26,7 +26,7 @@ const PortfolioPage = ( props ) => {
         <div className = "project">
           <div className = "hover-container">
             <div className = "container" id="communicaid">
-              <img className = "arrow"src={arrow}/>
+              <img className = "arrow" src={arrow} alt=""/>
             </div>
             <NavLink to="/portfolio/communicaid" activeClassName="link-active" className = "link">COMMUNICAID</NavLink>
           </div>
@@ -34,7 +34,7 @@ const PortfolioPage = ( props ) => {
         <div className = "project">
           <div className = "hover-container">
             <div className = "container" id="health">
-              <img className = "arrow"src={arrow}/>
+              <img className = "arrow"src={arrow} alt=""/>
             </div>
             <NavLink to="/portfolio/health-radar" activeClassName="link-active" className = "link">MY HEALTH RADAR</NavLink>
           </div>
@@ -42,7 +42,7 @@ const PortfolioPage = ( props ) => {
         <div className = "project">
           <div className = "hover-container">
             <div className = "container" id="basecamp">
-              <img className = "arrow"src={arrow}/>
+              <img className = "arrow"src={arrow} alt=""/>
             </div>
             <NavLink to="/portfolio/dashboard" activeClassName="link-active" className = "link">BASECAMP DASHBOARD</NavLink>
           </div>
@@ -50,7 +50,7 @@ const PortfolioPage = ( props ) => {
         <div className = "project">
           <div className = "hover-container">
             <div className = "container" id="status">
-              <img className = "arrow"src={arrow}/>
+              <img className = "arrow"src={arrow} alt=""/>
             </div>
             <NavLink to="/portfolio/status-board" activeClassName="link-active" className = "link">STATUS BOARD</NavLink>
           </div>
