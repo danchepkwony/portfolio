@@ -39,25 +39,6 @@ const App = () => {
     setWideEnough(window.innerWidth > 992);
   }, 100);
 
-  // const routes = (
-  //   '/', '/portfolio', '/contact'
-  // );
-
-  // function hashLinkScroll() {
-  //   const { hash } = window.location;
-  //   if (hash !== '') {
-  //     setTimeout(() => {
-  //       const id = hash.replace('#', '');
-  //       const element = document.getElementById(id);
-  //       if (element) element.scrollIntoView();
-  //     }, 0);
-  //   }
-  // }
-
-
-  // routes={routes}
-  // onUpdate={hashLinkScroll}>
-
   return(
       <Router>
       <ScrollToTop />
