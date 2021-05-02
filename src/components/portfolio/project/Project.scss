@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .Project{
-    margin-top: 5%;
+    margin-top: 10%;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -16,7 +16,6 @@
     .body{
         display: flex;
         flex-wrap: wrap;
-
 
         .container{
             @include breakpoint(largeWidth){
