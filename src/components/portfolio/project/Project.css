@@ -1,70 +1,35 @@
+@-webkit-keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .Project {
   margin-top: 5%;
-  width: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 15%;
 }
 
-.Project .header {
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  width: 95%;
-}
-
-.Project .header .title {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-weight: 200;
-  font-size: 2.75rem;
-}
-
-.Project .header .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-.Project .header .skills .skill:nth-child(1) {
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-
-.Project .header .skills .skill:nth-child(2) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-
-.Project .header .skills .skill:nth-child(3) {
-  -webkit-animation-delay: 0.55s;
-          animation-delay: 0.55s;
-}
-
-.Project .header .skills .skill:nth-child(4) {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
-}
-
-.Project .header .skills .skill:nth-child(5) {
-  -webkit-animation-delay: 0.85s;
-          animation-delay: 0.85s;
-}
-
-.Project .header .skills .skill {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  border-radius: 10px;
-  list-style-type: none;
-  margin-right: 1.25%;
-  margin-bottom: 2.5%;
-  font-size: 1rem;
-  position: relative;
-  opacity: 0;
-  -webkit-animation: appear 0.35s cubic-bezier(0, 0, 0, 1) 0.1s forwards;
-          animation: appear 0.35s cubic-bezier(0, 0, 0, 1) 0.1s forwards;
+@media (min-width: 992px) {
+  .Project {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 .Project .body {
@@ -76,9 +41,14 @@
 }
 
 .Project .body .container {
-  width: 45%;
   margin-right: 2.5%;
   margin-left: 2.5%;
+}
+
+@media (min-width: 992px) {
+  .Project .body .container {
+    width: 45%;
+  }
 }
 
 .Project .body .container .image {
@@ -87,22 +57,146 @@
 }
 
 .Project .body .text {
-  width: 45%;
   margin-right: 2.5%;
   margin-left: 2.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .Project .body .text {
+    display: block;
+    -ms-flex-wrap: unset;
+        flex-wrap: unset;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    width: 45%;
+  }
+}
+
+.Project .body .text .header {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-bottom: 5%;
+  width: 95%;
+}
+
+@media (min-width: 992px) {
+  .Project .body .text .header {
+    margin-bottom: 0;
+  }
+}
+
+.Project .body .text .header .title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 300;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (min-width: 992px) {
+  .Project .body .text .header .title {
+    font-size: 2.5rem;
+    text-align: unset;
+    margin-top: 0;
+  }
+}
+
+.Project .body .text .header .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: gray;
+}
+
+.Project .body .text .header .skills .skill:nth-child(1) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.Project .body .text .header .skills .skill:nth-child(2) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.Project .body .text .header .skills .skill:nth-child(3) {
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+
+.Project .body .text .header .skills .skill:nth-child(4) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.Project .body .text .header .skills .skill:nth-child(5) {
+  -webkit-animation-delay: 0.85s;
+          animation-delay: 0.85s;
+}
+
+@media (min-width: 992px) {
+  .Project .body .text .header .skills {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+}
+
+.Project .body .text .header .skills .skill {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 10px;
+  list-style-type: none;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  font-size: .65rem;
+  position: relative;
+  opacity: 0;
+  -webkit-animation: appear 0.35s cubic-bezier(0, 0, 0, 1) 0.1s forwards;
+          animation: appear 0.35s cubic-bezier(0, 0, 0, 1) 0.1s forwards;
+}
+
+@media (min-width: 992px) {
+  .Project .body .text .header .skills .skill {
+    font-size: 1rem;
+  }
 }
 
 .Project .body .text .details {
-  font-size: 1.5rem;
-  line-height: 3rem;
+  font-size: 1rem;
+  line-height: 2rem;
   margin-top: 0;
   margin-bottom: 7.5%;
 }
 
+@media (min-width: 992px) {
+  .Project .body .text .details {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+}
+
 .Project .body .text .link {
-  margin-left: 1.75%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-decoration: none;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   color: black;
   padding: 2.5%;
   border: black 3px solid;
@@ -115,6 +209,13 @@
   transition: bottom .2s, right .2s, -webkit-box-shadow .2s;
   transition: box-shadow .2s, bottom .2s, right .2s;
   transition: box-shadow .2s, bottom .2s, right .2s, -webkit-box-shadow .2s;
+}
+
+@media (min-width: 992px) {
+  .Project .body .text .link {
+    font-size: 1.75rem;
+    margin-left: 1.75%;
+  }
 }
 
 .Project .body .text .link:hover {

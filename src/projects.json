@@ -1,0 +1,25 @@
+{
+    "Communicaid":{
+        "title":"COMMUNICAID",
+        "description": "Communicaid is a lo-fi mockup created during a hackathon called HackTheCultre. The finished app would ease communication between hearing impaired people and strangers. I worked on the frontend with React Native for the mobile application and React for the web application.",
+        "skills": ["React Native", "React"],
+        "link": "https://devpost.com/software/hacktheculture"
+    },
+    "HealthRadar":{
+        "title":"MY HEALTH RADAR",
+        "description":"myHealthRadar is a COVID-19 inspired device-integrated electronic medical record service created for the TechPoint 2020 Challenge hackathon. I worked on the frontend using React and Firebase Authentication, and some of the backend with Firebase's Realtime Database.",
+        "skills":["React", "Firebase Auth", "Firebase DB"],
+        "link": "https://devpost.com/software/connect-tech-telehealth-team-4"
+    },
+    "Basecamp":{
+        "title":"BASECAMP DASHBOARD",
+        "description": "Basecamp Dashboard is a project management website created by and for the Digital Corps. The projected was divided between many developers. I worked on filtering projects displayed in a table and exporting those projects as a csv file.",
+        "skills":["React", "PHP", "Slim"]
+    },
+    "StatusBoard":{
+        "title":"STATUS BOARD",
+        "description": "Status Board is a custom Slack slash command used at the Digital Corps to keep track of employees. I wrote the Azure Functions that are triggered by the slash commands.",
+        "skills":["C#", ".Net", "Azure Functions"]
+    }
+
+}

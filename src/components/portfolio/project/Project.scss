@@ -1,51 +1,27 @@
+@import "../../variables";
+
 .Project{
     margin-top: 5%;
-    width: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 15%;
-
-    .header{
-        margin-right: 2.5%;
-        margin-left: 2.5%;
-        width: 95%;
-        
-        .title{
-            margin-top: 0;
-            margin-bottom: 5px;
-            font-weight: 200;
-            font-size: 2.75rem;
-        }
-
-        .skills{
-            display: flex;
-            padding: 0;
-            margin: 0;
-            @for $i from 1 through 5 {
-                .skill:nth-child(#{$i}) {animation-delay: .1s + .15s*$i; }
-            }
-            
-            .skill{ 
-                width: max-content;
-                border-radius: 10px;
-                list-style-type: none;
-                margin-right: 1.25%;
-                margin-bottom: 2.5%;
-                font-size: 1rem;
-                position: relative;
-                opacity: 0;
-
-                animation: appear .35s cubic-bezier(0, 0, 0, 1) .1s forwards
-            }
-        }
+    
+    @include breakpoint(largeWidth){
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .body{
         display: flex;
         flex-wrap: wrap;
 
+
         .container{
-            width: 45%;
+            @include breakpoint(largeWidth){
+                width: 45%;
+            }
             margin-right: 2.5%;
             margin-left: 2.5%;
 
@@ -56,21 +32,94 @@
         }
         
         .text{
-            width: 45%;
             margin-right: 2.5%;
             margin-left: 2.5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            @include breakpoint(largeWidth){
+                display: block;
+                flex-wrap: unset;
+                justify-content: unset;
+                width: 45%;
+            }
+
+            .header{
+                margin-right: 2.5%;
+                margin-left: 2.5%;
+                margin-bottom: 5%;
+                width: 95%;
+                
+                @include breakpoint(largeWidth){
+                    margin-bottom: 0;
+                }
+                
+                .title{
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    font-weight: 300;
+                    font-size: 1.25rem;
+                    text-align: center;
+                    margin-top: 10px;
+
+                    @include breakpoint(largeWidth){
+                        font-size: 2.5rem;
+                        text-align: unset;
+                        margin-top: 0;
+                    }
+                }
+        
+                .skills{
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                    @for $i from 1 through 5 {
+                        .skill:nth-child(#{$i}) {animation-delay: .1s + .15s*$i; }
+                    }
+
+                    justify-content: center;
+                    color: gray;
+
+                    @include breakpoint(largeWidth){
+                        justify-content: unset;
+                    }
+
+                    .skill{ 
+                        width: max-content;
+                        border-radius: 10px;
+                        list-style-type: none;
+                        margin-right: 5%;
+                        margin-bottom: 5%;
+                        font-size: .65rem;
+                        position: relative;
+                        opacity: 0;
+                        
+                        @include breakpoint(largeWidth){
+                            font-size: 1rem;
+                        }
+        
+                        animation: appear .35s cubic-bezier(0, 0, 0, 1) .1s forwards;
+                    }
+                }
+            }
 
             .details{
-                font-size: 1.5rem;
-                line-height: 3rem;
+                font-size: 1rem;
+                line-height: 2rem;
                 margin-top: 0;
                 margin-bottom: 7.5%;
+
+                @include breakpoint(largeWidth){
+                    font-size: 1.5rem;
+                    line-height: 3rem;
+                }
             }
 
             .link{
-                margin-left: 1.75%;
+                width: fit-content;
                 text-decoration: none;
-                font-size: 1.75rem;
+                font-size: 1.25rem;
                 color: black;
                 padding: 2.5%;
                 border: black 3px solid;
@@ -81,6 +130,10 @@
 
                 transition: box-shadow .2s, bottom .2s, right .2s;
                 
+                @include breakpoint(largeWidth){
+                    font-size: 1.75rem;
+                    margin-left: 1.75%;
+                }
             }
 
             .link:hover{
