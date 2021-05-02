@@ -50,11 +50,15 @@
                 margin-left: 2.5%;
                 margin-bottom: 5%;
                 width: 95%;
-                
+
+                @include breakpoint(mediumWidth){
+                    margin-bottom: 2.5%;
+                }
+
                 @include breakpoint(largeWidth){
                     margin-bottom: 0;
                 }
-                
+
                 .title{
                     margin-top: 10px;
                     margin-bottom: 5px;
@@ -62,6 +66,10 @@
                     font-size: 1.25rem;
                     text-align: center;
                     margin-top: 10px;
+
+                    @include breakpoint(mediumWidth){
+                        font-size: 2rem;
+                    }
 
                     @include breakpoint(largeWidth){
                         font-size: 2.5rem;
@@ -95,6 +103,10 @@
                         position: relative;
                         opacity: 0;
                         
+                        @include breakpoint(mediumWidth){
+                            font-size: 1rem;
+                        }
+
                         @include breakpoint(largeWidth){
                             font-size: 1rem;
                         }
@@ -109,6 +121,11 @@
                 line-height: 2rem;
                 margin-top: 0;
                 margin-bottom: 7.5%;
+
+                @include breakpoint(mediumWidth){
+                    font-size: 1.25rem;
+                    line-height: 2.5rem;
+                }
 
                 @include breakpoint(largeWidth){
                     font-size: 1.5rem;
