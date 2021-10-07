@@ -1,4 +1,9 @@
 {
+    "LSAMPResearch":{
+        "title":"LSAMP Research",
+        "description": "I did research with Louis Stokes Alliance for Minority Participation. I worked with Dr. Skoby at Ball State University to research ROOT, a software framework for data analysis, so we could implement machine learning on physics data.",
+        "skills": ["C", "ROOT", "Machine Learning", "Data Engineering"]
+    },
     "Communicaid":{
         "title":"COMMUNICAID",
         "description": "Communicaid is a lo-fi mockup created during a hackathon called HackTheCultre. The finished app would ease communication between hearing impaired people and strangers. I worked on the frontend with React Native for the mobile application and React for the web application.",

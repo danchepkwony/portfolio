@@ -80,11 +80,11 @@ const HomePage = (props) => {
       <div className = "Intro">
         <div className = "text">
           <h1 className = "name">
-            DAN<br/>
+            DAN{props.wideEnough ? <br/> : " "}
             CHEPKWONY
           </h1>
           <p className = "description">
-            Junior Full-stack Developer
+            Software Developer
           </p>
         </div>
         {props.wideEnough && 
@@ -102,9 +102,8 @@ const HomePage = (props) => {
         <div className = "info">  
           <h2 className = "hi">HI, I'M DAN</h2>
           <p className = "about-me">
-              I'm a sophomore at Ball State University majoring in Computer Science.
-              I take interest in mobile, web, and software development as well as design, education, and accessibility.
-              Also, I love cats.
+              I'm a junior at Ball State University majoring in Computer Science.
+              I enjoy software development and have recently found interest in data science. I also like being employed.
           </p>
         </div>
       </div>

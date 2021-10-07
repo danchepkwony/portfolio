@@ -16,6 +16,7 @@ const Project = (props) => (
           </div>
           <p className = "details">{props.description}</p>
           { props.hasLink ? <a className = "link" href={props.link} target="_blank" rel="noopener noreferrer">View Project</a> : ""}
+          { props.hasDownload ? <a className = "link" href={props.img} download="Chepkwony_LSAMP_Research.png">View Project</a> : ""}
         </div>
       </div>
     </div>

@@ -56,6 +56,10 @@
   top: 5px;
 }
 
+.Contact .Fail-Send.active {
+  display: block;
+}
+
 @media (min-width: 992px) {
   .Contact .Text {
     width: 50%;

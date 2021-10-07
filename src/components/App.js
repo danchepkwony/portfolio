@@ -12,25 +12,11 @@ import HomePage from './home/Home';
 import PortfolioPage from './portfolio/Portfolio';
 import ContactPage from './contact/Contact';
 import Footer from './footer/Footer';
-import images from './images/allimages';
 
 const App = () => {
   const [wideEnough, setWideEnough] = useState(window.innerWidth > 992);
 
   useEffect(() => {
-    const loadImage = image => {
-      return new Promise((resolve, reject) => {
-        const loadImg = new Image();
-        loadImg.src = image;
-        loadImg.onload = () =>
-          {resolve(image)};
-        loadImg.onerror = err => reject(err);
-      })
-    }
-
-    Promise.all(images.map(image => loadImage(image)))
-      .catch(err => console.log("Failed to load images", err))
-
     window.addEventListener("resize", updateProjects); 
     return () => {window.removeEventListener("resize", updateProjects)};
   });
@@ -39,13 +25,14 @@ const App = () => {
     setWideEnough(window.innerWidth > 992);
   }, 100);
 
-  return(
+  return ( 
       <Router>
       <ScrollToTop />
       <Navigation wideEnough={wideEnough}/>
       <Switch>
         <Route exact path='/' component={() => <HomePage wideEnough={wideEnough}/>} />
         <Route exact path='/portfolio' component={() => <PortfolioPage wideEnough={wideEnough}/>}/>
+          <Route exact path='/portfolio/lsamp-research' component={() => <PortfolioPage wideEnough={wideEnough} project="lsampResearch"/>}/>
           <Route exact path='/portfolio/communicaid' component={() => <PortfolioPage wideEnough={wideEnough} project="communicaid"/>}/>
           <Route exact path='/portfolio/health-radar' component={() => <PortfolioPage wideEnough={wideEnough} project="healthradar"/>}/>
           <Route exact path='/portfolio/dashboard' component={() => <PortfolioPage wideEnough={wideEnough} project="dashboard"/>}/>
@@ -54,8 +41,7 @@ const App = () => {
         <Redirect from='*' to='/' />
       </Switch>
       <Footer />
-    </Router>
-  )
+    </Router>)
 };
 
 

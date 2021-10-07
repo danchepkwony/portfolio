@@ -1,29 +1,29 @@
 import React, {useState} from 'react';
 import "./Contact.css";
-import form from '../../form.json';
 import axios from 'axios';
 
 const ContactPage = (props) => {
   
+  const [failSend, setFailSend] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   
   const onSubmit = () => {
-    axios.post(form.RequestUrl,
-      {[form.Email]: email, [form.Message]: message}).then(() =>
-        {setEmail("");
-        setEmail("");
-      })
-      .catch(() => {var errorMessage = document.getElementById("Fail-Send");
-      errorMessage.style.display = "block"});
+    setFailSend(true);
+    // axios.post(process.env.REACT_APP_FORM_URL,
+    //   {[process.env.REACT_APP_FORM_EMAIL]: email, [process.env.REACT_APP_FORM_MESSAGE]: message}).then(() =>
+    //     {setEmail("");
+    //     setMessage("");
+    //   })
+    //   .catch(() => {setFailSend(true)});
   }
 
   return (
     <div className = "Contact">
       {props.wideEnough ? 
       <div className = "Banner" /> : ""}
-      <div id = "Fail-Send" className="Fail-Send">
-        <span className="close-button" onClick={(e) => {e.target.parentElement.style.display = "none"}}>X</span> 
+      <div class = {failSend ? "Fail-Send active" : "Fail-Send"} id = "Fail-Send">
+        <span className="close-button" onClick={() => setFailSend(false)}>X</span> 
         There was a problem sending your message :(
     </div>
       <form className = "Text">
