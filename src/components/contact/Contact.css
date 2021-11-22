@@ -19,7 +19,7 @@
 .Contact {
   -webkit-animation: page-transition .25s ease-in forwards;
           animation: page-transition .25s ease-in forwards;
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +105,7 @@
   font-size: 1rem;
   margin-left: 7.5%;
   border: solid;
-  height: 100px;
+  height: 200px;
   margin-bottom: 15%;
 }
 

@@ -2,7 +2,7 @@
 
 .Contact{
     animation: page-transition .25s ease-in forwards;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@
             font-size: 1rem;
             margin-left: 7.5%;
             border: solid;
-            height: 100px;
+            height: 200px;
             margin-bottom: 15%;
 
             @include breakpoint(largeWidth){
