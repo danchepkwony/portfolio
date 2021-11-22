@@ -11,7 +11,7 @@ src/.env
 
 # production
 /build
-/.fireabse
+/.firebase
 
 # misc
 .DS_Store

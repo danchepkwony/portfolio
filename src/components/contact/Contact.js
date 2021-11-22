@@ -9,13 +9,12 @@ const ContactPage = (props) => {
   const [message, setMessage] = useState("");
   
   const onSubmit = () => {
-    setFailSend(true);
-    // axios.post(process.env.REACT_APP_FORM_URL,
-    //   {[process.env.REACT_APP_FORM_EMAIL]: email, [process.env.REACT_APP_FORM_MESSAGE]: message}).then(() =>
-    //     {setEmail("");
-    //     setMessage("");
-    //   })
-    //   .catch(() => {setFailSend(true)});
+    axios.post(process.env.REACT_APP_FORM_URL,
+      {[process.env.REACT_APP_FORM_EMAIL]: email, [process.env.REACT_APP_FORM_MESSAGE]: message}).then(() =>
+        {setEmail("");
+        setMessage("");
+      })
+      .catch(() => {setFailSend(true)});
   }
 
   return (
