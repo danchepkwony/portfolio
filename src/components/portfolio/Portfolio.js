@@ -24,7 +24,7 @@ const PortfolioPage = ( props ) => {
     <div className = "Portfolio">
       { props.project == null ?
       <div className = "Links">
-        <ProjectLink id = "lsamp-research" wideEnough = {props.wideEnough} lineColor="orange" />
+        <ProjectLink id = "lsamp-research" wideEnough = {props.wideEnough} lineColor="yellow" />
         <ProjectLink id = "communicaid" wideEnough = {props.wideEnough} lineColor="orange" />
         <ProjectLink id = "health-radar" wideEnough = {props.wideEnough} lineColor="yellow"/>
         <ProjectLink id = "dashboard" wideEnough = {props.wideEnough} lineColor="orange"/>
