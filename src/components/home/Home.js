@@ -1,113 +1,79 @@
-import React, {useEffect} from 'react';
-import { NavLink } from 'react-router-dom';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
 import { withRouter } from 'react-router';
-import headshot from '../images/headshot.jpg';
-import shapes from '../images/shapes.png';
-import communicaid from '../images/communicaid-mockup.png';
-import statusboard from '../images/statusboard.png';
-import arrow from '../images/arrows.png';
-import './Home.css';
+import { NavLink } from 'react-router-dom';
+import './Home.scss';
 
-const HomePage = (props) => {
-  const { ref, inView } = useInView({
-    threshold: .25,
-  });
+import muncieAfghan from '../../assets/images/muncieafghan.png';
+import sportslink from '../../assets/images/sportslink.png';
+import statusboard from '../../assets/images/statusboard.png';
+import digitalcorps from '../../assets/images/digitalcorps.png';
 
-  useEffect(() => {
-    var headshot = document.getElementById("headshot");
-    if(inView && !headshot.classList.contains("appear")){
-      headshot.classList.add("appear");
-    }
-  }, [inView])
-
-  const onSlideChange = (percent) => {
-    var slideshow = document.getElementById("slideshow");
-    slideshow.style.right = percent;
-  }
-
-  const transitionNav = (e, link) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-        props.history.push('/portfolio/' + link);
-    },800)
-  }
-
-  const desktopSlideshow = (
-        //TODO: Clean this
-        <div id = "slideshow" className = "slideshow">
-          <div className="slideshow_project first_project">
-            <NavLink to='/portfolio/communicaid' className = "project" onClick={e => {transitionNav(e, 'communicaid')}}>
-              <img className = "project_image" src={communicaid} alt="Example Project"></img>
-              <h2 className = "project_title">Communicaid</h2>
-            </NavLink>
-            <div className = "container">
-              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("100%")}></img>
-            </div>
-          </div>
-          <div className="slideshow_project middle_project">
-            <div className = "container container_middle flip">
-              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("0%")}></img>
-            </div>
-            <NavLink to='/portfolio/status-board' className = "project project_middle" onClick={e => {transitionNav(e, 'status-board')}}>
-              <img className = "project_image" src={statusboard} alt="Status Board"></img>
-              <h2 className = "project_title">Status Board</h2>
-            </NavLink>
-            <div className = "container container_middle">
-              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("200%")}></img>
-            </div>
-          </div>
-          <div className="slideshow_project final_project">
-            <div className = "container flip">
-              <img className = "next_arrow" src={arrow} alt="Next Project" onClick={() => onSlideChange("100%")}></img>
-            </div>
-            <div className = "full_portfolio">
-              <NavLink to='/portfolio' className = "text" onClick={e => {transitionNav(e, '')}}> Full Portfolio</NavLink>
-            </div>
-          </div>
-        </div>)
-
-  const mobileSlideshow = (
-        <div className = "mobile_slideshow">
-          <div className = "full_portfolio">
-            <NavLink to='/portfolio' className = "text"> View Portfolio</NavLink>
-          </div>
-        </div>)
+const HomePage = () => {
 
   return (
-    <div className = "Home">
-      <div className = "Intro">
-        <div className = "text">
-          <h1 className = "name">
-            DAN{props.wideEnough ? <br/> : " "}
-            CHEPKWONY
-          </h1>
-          <p className = "description">
-            Software Developer
-          </p>
-        </div>
-        {props.wideEnough && 
-        <div className = "shapes">
-            <img src={shapes} alt="" />
-        </div> }
-      </div>
-      <div className = "Work">
-        {props.wideEnough ? desktopSlideshow : mobileSlideshow }
-      </div>
-      <div className = "Self">
-        <div className = "container" ref={ref}>
-          <img src={headshot} id = "headshot" className = "headshot" alt="Headshot of Dan Chepkwony"  />
-        </div>
-        <div className = "info">  
-          <h2 className = "hi">HI, I'M DAN</h2>
-          <p className = "about-me">
-              I'm a junior at Ball State University majoring in Computer Science.
-              I enjoy software development and have recently found interest in data science. I also like being employed.
-          </p>
-        </div>
-      </div>
-    </div>
+    <ul className = "projectGrid">
+      <NavLink to="/projects/muncie-afghan">
+        <li className="project">
+          <div className="imageContainer">
+            <img src={muncieAfghan} alt="Muncie Afghan Refugees"/>
+          </div>
+          <div className="textContainer">
+            <h2>Muncie Afghan Refugee Website</h2>
+            <ul>
+              <li>React TypeScript</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+        </li>
+      </NavLink>
+      <NavLink to="/projects/digital-corps">
+        <li className="project">
+            <div className="imageContainer">
+              <img src={digitalcorps} alt="Digital Corps"/>
+            </div>
+            <div className="textContainer">
+              <h2>Digital Corps Website</h2>
+              <ul>
+                <li>Wordpress</li>
+                <li>PHP</li>
+                <li>Javascript</li>
+                <li>JQuery</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+        </li>
+      </NavLink>
+      <NavLink to="/projects/sportslink">
+        <li className="project">
+            <div className="imageContainer">
+              <img src={sportslink}  alt="Sportslink"/>
+            </div>
+            <div className="textContainer">
+            <h2>Sportslink Application Form</h2>
+            <ul>
+                <li>React Javascript</li>
+                <li>Azure Functions</li>
+                <li>C#</li>
+              </ul>
+            </div>
+        </li>
+      </NavLink>
+      <NavLink to="/projects/status-board">
+        <li className="project">
+            <div className="imageContainer">
+              <img src={statusboard} alt="Status Board"/>
+            </div>
+            <div className="textContainer">
+            <h2>Slack Status Board</h2>
+            <ul>
+                <li>Azure Functions</li>
+                <li>C#</li>
+                <li>MySQL</li>
+              </ul>
+            </div>
+        </li>
+      </NavLink>
+    </ul>
   )
 }
  

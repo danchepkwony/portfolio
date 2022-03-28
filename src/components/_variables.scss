@@ -1,9 +1,7 @@
 //Colors
 
-$blue: #007cbe;
-$orange: #ffd639;
-$pink: #ffa3af;
-$yellow: #ffff78;
+$black: #4f4f4f;
+$greyblue: #919be7;
 
 //Breakpoints
 
@@ -32,4 +30,8 @@ $yellow: #ffff78;
     100%{
         opacity: 1;
     }
+}
+
+body{
+  color: $black;
 }

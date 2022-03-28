@@ -6,9 +6,17 @@
 
 body {
   margin: 0;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: Poppins, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  box-shadow: 1px 1px 5px #4f4f4f;
 }
 
 code {
