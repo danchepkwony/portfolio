@@ -4,15 +4,13 @@ header{
     display: flex;
     justify-content: space-between;
     margin: 10px 20px 0 20px;
-    font-size: .6rem;
 
     @include breakpoint(mediumWidth){
         margin: 10px 40px 0 40px;
-        font-size: 1rem;
     }
 
     h1{
-        font-size: 1.25rem;
+        font-size: 1rem;
         color: $black;
     
         @include breakpoint(mediumWidth){
@@ -30,7 +28,7 @@ nav div{
 }
 
 .link{
-    font-size: 1.25em;
+    font-size: .8rem;
     text-decoration: none;
     color: $greyblue;
     transition: color .2s;
@@ -38,6 +36,7 @@ nav div{
 
     @include breakpoint(mediumWidth){
         margin-left: 40px;
+        font-size: 1.25rem;
     }
 }
 

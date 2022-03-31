@@ -11,7 +11,6 @@ const Navigation = () => (
                 <NavLink className="link" activeClassName = "activeLink" to='/aboutme'>About</NavLink>
                 <NavLink className="link" activeClassName = "activeLink" to='/resume'>Resume</NavLink>
               </div>
-              <div className = "Nav-underline"></div>
         </nav>
       </header>
 );

@@ -2,6 +2,7 @@
 
 .resume{
     margin: 10px 40px 0 40px;
+    animation: page-transition .1s ease-in-out forwards;
 
     object{
         height: 600px;
