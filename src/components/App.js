@@ -20,14 +20,14 @@ Object.keys(projects).map((page) => routes.push({path: '/' + page, project: page
 
 const App = () => {
   const firebaseConfig = {
-    apiKey: "AIzaSyCaP92eoq4bEjfQzxZ26azC8IWJ970HiWU",
-    authDomain: "portfolio2-47919.firebaseapp.com",
-    databaseURL: "https://portfolio2-47919.firebaseio.com",
-    projectId: "portfolio2-47919",
-    storageBucket: "portfolio2-47919.appspot.com",
-    messagingSenderId: "572088866809",
-    appId: "1:572088866809:web:cdb5d225cffe14baa90f28",
-    measurementId: "G-250B7QK8NR"
+    apiKey: "###",
+    authDomain: "###",
+    databaseURL: "###",
+    projectId: "###",
+    storageBucket: "###",
+    messagingSenderId: "###",
+    appId: "###",
+    measurementId: "###"
   };
   
   const app = initializeApp(firebaseConfig);
