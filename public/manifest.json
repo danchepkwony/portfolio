@@ -3,19 +3,14 @@
   "name": "Dan Chepkwony Junior Fullstack Developer",
   "icons": [
     {
-      "src": "icon.ico",
+      "src": "head.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "icon192.png",
+      "src": "head.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "icon512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "192x192 512x512"
     }
   ],
   "start_url": ".",

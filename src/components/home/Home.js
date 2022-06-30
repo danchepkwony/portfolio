@@ -1,80 +1,68 @@
-import React from 'react';
-import { withRouter } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import React, {useState, useEffect, useRef} from 'react';
+import { isMobile } from 'react-device-detect';
+
 import './Home.scss';
+import ProjectList from '../projectList/ProjectList';
+import About from '../about/About';
+import AnimalCrossing from '../spline/Spline';
 
-import muncieAfghan from '../../assets/images/muncieafghan.png';
-import sportslink from '../../assets/images/sportslink.png';
-import statusboard from '../../assets/images/statusboard.png';
-import digitalcorps from '../../assets/images/digitalcorps.png';
+const Home = () => {
+  const [section, setSection] = useState(<>Here's <span id="blur">some stuff I've done</span></>)
+  const containerRef = useRef(null)
 
-const HomePage = () => {
+  //"Here's..." blur effect
+  const blurTransition = () => {
+    var blurElem = document.getElementById('blur');
+    if(blurElem){
+      blurElem.classList.remove('blur');
+      setTimeout(function () {
+        blurElem.classList.add('blur');
+      }, 50)
+    }
+  }
 
+  //Intersection Observer for about section
+  useEffect(() => {
+    const options = {root: null, rootMargin: "0px", threshold:.75}
+    const callbackFunction = (entries) => {
+      const [ entry ] = entries
+      entry.isIntersecting && !isMobile ? setSection(<>Here's <span id="blur">more about me</span></>) : setSection(<>Here's <span id="blur">some stuff I've done</span></>)
+      blurTransition();
+    }
+
+    const observer = new IntersectionObserver(callbackFunction, options)
+    const reference = containerRef.current;
+    if (reference) observer.observe(reference)
+    blurTransition();
+
+    return () => {
+      if(reference) observer.unobserve(reference)
+    }
+  }, [containerRef])
+    
   return (
-    <ul className = "projectGrid">
-      <NavLink to="/projects/muncie-afghan">
-        <li className="project">
-          <div className="imageContainer">
-            <img src={muncieAfghan} alt="Muncie Afghan Refugees"/>
+    <main>
+      <div className="home">
+        <div className='left'>
+          <div className='text'>
+            <div className="sub">Hi, I'm</div>
+            <h1>Dan Chepkwony</h1>
+            <p>{section}</p>
           </div>
-          <div className="textContainer">
-            <h2>Muncie Afghan Refugee Website</h2>
-            <ul>
-              <li>React TypeScript</li>
-              <li>CSS</li>
-            </ul>
+          {
+          //Bulky; shouldn't load on mobile
+          !isMobile && <AnimalCrossing />
+          }
+        </div>
+        <div className='right'>
+          <ProjectList/>
+          <div ref={containerRef}>
+            <About />
           </div>
-        </li>
-      </NavLink>
-      <NavLink to="/projects/digital-corps">
-        <li className="project">
-            <div className="imageContainer">
-              <img src={digitalcorps} alt="Digital Corps"/>
-            </div>
-            <div className="textContainer">
-              <h2>Digital Corps Website</h2>
-              <ul>
-                <li>Wordpress</li>
-                <li>PHP</li>
-                <li>Javascript</li>
-                <li>JQuery</li>
-                <li>CSS</li>
-              </ul>
-            </div>
-        </li>
-      </NavLink>
-      <NavLink to="/projects/sportslink">
-        <li className="project">
-            <div className="imageContainer">
-              <img src={sportslink}  alt="Sportslink"/>
-            </div>
-            <div className="textContainer">
-            <h2>Sportslink Application Form</h2>
-            <ul>
-                <li>React Javascript</li>
-                <li>Azure Functions</li>
-                <li>C#</li>
-              </ul>
-            </div>
-        </li>
-      </NavLink>
-      <NavLink to="/projects/status-board">
-        <li className="project">
-            <div className="imageContainer">
-              <img src={statusboard} alt="Status Board"/>
-            </div>
-            <div className="textContainer">
-            <h2>Slack Status Board</h2>
-            <ul>
-                <li>Azure Functions</li>
-                <li>C#</li>
-                <li>MySQL</li>
-              </ul>
-            </div>
-        </li>
-      </NavLink>
-    </ul>
+        </div>
+      </div>
+    </main>
   )
 }
  
-export default withRouter(HomePage);
+export default Home;

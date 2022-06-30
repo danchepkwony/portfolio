@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,100;0,400;1,100;1,400');
+
 :root {
   overscroll-behavior: none;
   overflow-x: hidden;
@@ -6,20 +8,46 @@
 
 body {
   margin: 0;
-  font-family: Poppins, Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3{
+  font-weight: 400;
 }
 
 a{
   text-decoration: none;
 }
 
-img{
-  box-shadow: 1px 1px 5px #4f4f4f;
+button{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.blue{
+  color: #2376E4;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.blue:hover{
+  color: #4d4d4d;
+  transition: color .2s;
 }

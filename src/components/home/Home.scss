@@ -1,116 +1,33 @@
 @import "../variables";
 
-.projectGrid{
-    padding: 0;
-    margin: 10px 10px 0 10px;
-    display: grid; 
-    gap: 10px 10px;
-    list-style-type: none;
-    grid-template-columns: auto;
-    animation: page-transition .1s ease-in-out forwards;
+.home{
+    margin-top: 25px;
 
     @include breakpoint(mediumWidth){
-        margin: 10px 40px 0 40px;
-        gap: 50px 50px;
+      display: flex;
+      margin-top: 50px;
     }
 
-    h1{
-        text-align: center;
-        font-size: 1rem;
-
-        @include breakpoint(mediumWidth){
-            font-size: 1.5rem;
-        }
-    }
-    
-    @include breakpoint(largeWidth){
-        grid-template-columns: .5fr .5fr;
-    }
-
-    a{
-        margin: 0;
-        padding: 0;
-    }
-
-    img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        filter: brightness(.25);
-    
-        @include breakpoint(largeWidth){
-            filter: brightness(1);
-            transition: filter .25s;
-        }
+    @include breakpoint(desktopWidth){
+      margin-top: 75px;
     }
 }
 
-.project{
-    margin: 0;
-    position: relative;
+@include breakpoint(mediumWidth){
+  .left #blur{
+    filter: blur(2px);
+  }
+
+  .blur{
+      animation: blur ease-in-out .25s forwards;
+  }
 }
 
-.imageContainer{
-    height: 300px;
-    width: auto;
-
-    @include breakpoint(mediumWidth){
-        height: 400px;
+@keyframes blur {
+    0% {
+        filter: blur(2px);
+    }
+    100% {
+        filter: blur(0px);
     }
 }
-
-.textContainer{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    transform: translateY(-50%);
-    color: white;
-    z-index: 2;
-    opacity: 1;
-
-    @include breakpoint(largeWidth){
-        opacity: 0;
-        transition: opacity .25s;
-    }
-
-    h2{
-        margin: 10px 0;
-        font-size: 1.25rem;
-
-        @include breakpoint(mediumWidth){
-            font-size: 2rem;
-        }
-    }
-
-    ul{
-        padding: 0;
-        margin: 0 10%;
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-    }
-
-    li{
-        margin: 0 5px;
-        font-size: .75rem;
-
-        @include breakpoint(mediumWidth){
-            margin: 0 10px;
-            font-size: 1rem;
-        }
-    }
-}
-
-.project:hover{
-    .textContainer{
-        opacity: 1;
-        transition: opacity .25s;
-    }
-
-    img{
-        filter: brightness(.25);
-        transition: filter .25s;
-    }
-} 

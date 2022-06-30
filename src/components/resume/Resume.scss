@@ -9,7 +9,7 @@
         width: 100%;
     }
 
-    @include breakpoint(largeWidth){
+    @include breakpoint(desktopWidth){
         display: flex;
         justify-content: center;
 

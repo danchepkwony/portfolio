@@ -1,25 +1,22 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, 
+  BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+  Redirect,
+} from "react-router-dom";
+import { CSSTransition } from 'react-transition-group';
+
+import Home from './home/Home';
+import Project from './project/Project';
 import ScrollToTop from './ScrollToTop';
-import Navigation from './navigation/Navigation';
-import HomePage from './home/Home';
-import AboutPage from './about/About';
-import ResumePage from './resume/Resume';
-import MuncieAfghan from './portfolio/muncieAfghan/MuncieAfghan';
-import DigitalCorps from './portfolio/digitalcorps/DigitalCorps';
-import Sportslink from './portfolio/sportslink/Sportslink';
-import StatusBoard from './portfolio/statusboard/StatusBoard';
-import Footer from './footer/Footer';
-
-import '../components/portfolio/Portfolio.scss';
-
+import projects from '../assets/projects.json';
+import './App.scss';
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
+
+const routes = []
+
+Object.keys(projects).map((page) => routes.push({path: '/' + page, project: page, Component: Project}))
 
 const App = () => {
   const firebaseConfig = {
@@ -38,20 +35,40 @@ const App = () => {
   logEvent(analytics, 'notification_received');
 
   return ( 
-      <Router>
+    <Router>
       <ScrollToTop />
-      <Navigation/>
-      <Switch>
-        <Route exact path='/projects' component={HomePage} />
-          <Route path='/projects/muncie-afghan' component={MuncieAfghan} />
-          <Route path='/projects/digital-corps' component={DigitalCorps} />
-          <Route path='/projects/sportslink' component={Sportslink} />
-          <Route path='/projects/status-board' component={StatusBoard} />
-        <Route path='/aboutme' component={AboutPage} />
-        <Route path='/resume' component={ResumePage} />
-        <Redirect from='*' to='/projects' />
-      </Switch>
-      <Footer />
+      <div className='app-container'>
+        <Route exact path="/">
+          {({ match }) => (
+            <CSSTransition
+              in={match != null}
+              timeout={1000}
+              classNames='home'
+              unmountOnExit
+              appear
+            >
+              <Home/>
+            </CSSTransition>
+        )}
+        </Route>
+        {routes.map(({ path, project, Component }) => (
+          <Route key={path} path={path}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={1000}
+                classNames='projects'
+                unmountOnExit
+                appear
+              >
+                <Component page={project}/>
+              </CSSTransition>
+          )}
+          </Route>
+        ))}
+        {/*  */}
+        <Redirect from="/portfolio" to="/"/>
+      </div>
     </Router>)
 };
 

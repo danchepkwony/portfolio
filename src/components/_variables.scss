@@ -1,18 +1,21 @@
 //Colors
 
-$black: #4f4f4f;
-$greyblue: #919be7;
+$black: #4d4d4d;
+$blue: #2376E4;
 
 //Breakpoints
 
 @mixin breakpoint($point) {
     @if $point == giantWidth {
-        @media (min-width: 2100px) { @content; }
-      }
+      @media (min-width: 2100px) { @content; }
+    }
     @else if $point == extraLargeWidth {
+        @media (min-width: 1800px) { @content; }
+      }
+    @else if $point == largeWidth {
       @media (min-width: 1200px) { @content; }
     }
-    @else if $point == largeWidth {
+    @else if $point == desktopWidth {
         @media (min-width: 992px) { @content; }
       }
     @else if $point == mediumWidth {
@@ -36,4 +39,23 @@ $greyblue: #919be7;
 
 body{
   color: $black;
+
+  @include breakpoint(smallWidth){
+    font-size: 70%;
+  }
+  @include breakpoint(mediumWidth){
+    font-size: 75%;
+  }
+  @include breakpoint(desktopWidth){
+    font-size: 80%;
+  }
+  @include breakpoint(largeWidth){
+    font-size: 100%;
+  }
+  @include breakpoint(extraLargeWidth){
+    font-size: 125%;
+  }
+  @include breakpoint(giantWidth){
+    font-size: 150%;
+  }
 }
