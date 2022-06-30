@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+.projectGrid{
+    margin-top: 50px;
+
+    @include breakpoint(mediumWidth){
+        margin: 0;
+    }
+
+    *{
+        list-style: none;
+    }
+
+    .project{
+        margin-bottom: 40px;
+    }
+    
+    .project h2{
+        font-size: 2.25em;
+    }
+    
+    .project ul{
+        display: flex;
+        margin-top: 5px;
+    }
+    
+    .project li{
+        margin-right: 15px;
+    }
+}
+

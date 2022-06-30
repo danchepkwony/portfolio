@@ -1,0 +1,102 @@
+@import '../variables';
+
+.projects{
+    margin-top: 25px;
+
+    @include breakpoint(mediumWidth){
+      display: flex;
+      margin-top: 75px;
+    }
+
+    @include breakpoint(desktopWidth){
+      margin-top: 100px;
+    }
+
+    .sub-alt{
+        font-size: 1.25em;
+    }
+
+    .back{
+        margin-left: 25px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        font-size: 1.25em;
+    
+        @include breakpoint(mediumWidth){
+            position: fixed;
+            margin-left: 50px;
+            margin-top: -25px;
+        }
+    
+        @include breakpoint(desktopWidth){
+            margin-top: -50px;
+        }
+    }
+
+    .back:hover{
+        span{
+            transform: translateX(-5px);
+            transition: transform .1s;
+        }
+    }
+
+    .project{
+        margin-bottom: 0px;
+        div{
+            font-size: 1.5em;
+        }
+    
+        p{
+            margin-bottom: 10px;
+        }
+    
+        a{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        img{
+            width: 100%;
+            object-fit: cover;
+            margin: 20px 0;
+            border: solid 1px #d8d7d7;
+            max-height: 300px;
+
+            @include breakpoint(extraLargeWidth){
+                max-height: 400px;
+            }
+        }
+    }
+
+    .project-links{
+        font-size: .9em;
+        margin-bottom: 60px;
+
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-flow: row;
+            flex-wrap: wrap;
+
+            @include breakpoint(mediumWidth){
+                justify-content: left;
+            }
+        }
+
+        li{
+            margin-right: 20px;
+            margin-bottom: 10px;
+            width: fit-content;
+
+            @include breakpoint(mediumWidth){
+                margin-right: 40px;
+            }
+        }
+       
+        .black{
+            color: $black;
+        }
+    }
+}
+
