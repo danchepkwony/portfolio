@@ -1,67 +1,87 @@
-import React, {useState, useEffect, useRef} from 'react';
-import { isMobile } from 'react-device-detect';
+import React, {useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import Helmet from 'react-helmet';
+import projects from '../../assets/projects.json';
 
 import './Home.scss';
-import ProjectList from '../projectList/ProjectList';
-import About from '../about/About';
-import AnimalCrossing from '../spline/Spline';
+
+import arrow from '../../assets/images/arrow.svg';
+import codepen from '../../assets/images/codepen.svg';
+import devpost from '../../assets/images/devpost.svg';
+import github from '../../assets/images/github.svg';
 
 const Home = () => {
-  const [section, setSection] = useState(<>Here's <span id="blur">some stuff I've done</span></>)
-  const containerRef = useRef(null)
-
-  //"Here's..." blur effect
-  const blurTransition = () => {
-    var blurElem = document.getElementById('blur');
-    if(blurElem){
-      blurElem.classList.remove('blur');
-      setTimeout(function () {
-        blurElem.classList.add('blur');
-      }, 50)
-    }
-  }
-
-  //Intersection Observer for about section
   useEffect(() => {
-    const options = {root: null, rootMargin: "0px", threshold:.75}
-    const callbackFunction = (entries) => {
-      const [ entry ] = entries
-      entry.isIntersecting && !isMobile ? setSection(<>Here's <span id="blur">more about me</span></>) : setSection(<>Here's <span id="blur">some stuff I've done</span></>)
-      blurTransition();
+    var arrow = document.getElementById('arrow');
+
+    const fadeArrow = () => {
+       arrow.style.opacity = 100 - (document.documentElement.scrollTop) + "%"
     }
 
-    const observer = new IntersectionObserver(callbackFunction, options)
-    const reference = containerRef.current;
-    if (reference) observer.observe(reference)
-    blurTransition();
+    document.addEventListener('scroll', fadeArrow)
 
-    return () => {
-      if(reference) observer.unobserve(reference)
-    }
-  }, [containerRef])
-    
+    return(() => {document.removeEventListener('scroll', fadeArrow)})
+  }, [])
+
   return (
-    <main>
-      <div className="home">
-        <div className='left'>
-          <div className='text'>
-            <div className="sub">Hi, I'm</div>
-            <h1>Dan Chepkwony</h1>
-            <p>{section}</p>
-          </div>
-          {
-          //Bulky; shouldn't load on mobile
-          !isMobile && <AnimalCrossing />
-          }
+    <>
+     <Helmet>
+        <title>Dan Chepkwony</title>
+        <meta name="description" content="Software Developer" />
+    </Helmet>
+      <main className='home'>
+        <div className='down-container'>
+          <img id='arrow' src={arrow} alt=''></img>
         </div>
-        <div className='right'>
-          <ProjectList/>
-          <div ref={containerRef}>
-            <About />
+        <section>
+          <div className="sub spaced">Software Developer</div>
+          <h1 className='name spaced'>Dan Chepkwony</h1>
+          <ul className="project-list">
+              {Object.keys(projects).map((page) => 
+                <li key={page} className="project-list-item">
+                    <h2><Link to={"/" + page} className='link project-list-links spaced'>{projects[page].title}</Link></h2>
+                </li>)}
+          </ul>
+        </section>
+        <section className='about'>
+          <h1 className='spaced'>About Me</h1>
+            <p>
+                Hi, I'm Dan. I'm a rising senior at Ball State University majoring in Computer Science.
+            </p>
+            <p>
+                I started coding in highschool by making bad Roblox games.
+                Now, I work at the Digital Corps, an on-campus agency that makes websites and other digital products.
+                At the Digital Corps, I've learned how to collaborate with other developers and disciplines. 
+            </p>
+            <p>
+                My favorite thing to do is collaborate with UX and design.
+                I love seeing art be used to envision effective products 
+                and getting to implement those visions. 
+            </p>
+            <p className='about-links'>
+                <a className='link' href='/resume.pdf' download="Resume_Chepkwony">
+                    Download my resume
+                </a>
+                <a className='link' href="mailto: dan.k.chepkwony@gmail.com">
+                    Email me
+                </a>
+            </p>
+        </section>
+        <footer>
+          <div>
+            <a href="https://codepen.io/danchepkwony" target="_blank" rel="noopener noreferrer">
+              <img className='link' src={codepen} alt="codepen"/>
+            </a>
+            <a href="https://devpost.com/danchepkwony" target="_blank" rel="noopener noreferrer">
+              <img className='link' src={devpost} alt="devpost"/>
+            </a>
+            <a href="https://github.com/danchepkwony" target="_blank" rel="noopener noreferrer">
+              <img className='link' src={github} alt="github"/>
+            </a>
           </div>
-        </div>
-      </div>
-    </main>
+        </footer>
+      </main>
+     </>
   )
 }
  

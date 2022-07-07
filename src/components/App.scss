@@ -1,237 +1,117 @@
 @import './variables';
 
 .app-container{
-    position: relative
+    position: relative;
+    margin-top: 50px;
 }
 
-.home, .projects{
-    width: 100%;
-    position: absolute;
-    top: 0;
+.circle-container{
+    pointer-events: none;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
     left: 0;
+    top: 0;
 }
 
-.projects main{
+#circle, #circle2{
+    position: absolute;
+    border-radius: 50%;
+    transition: transform .1s ease, opacity .25s ease;
+    will-change: transform, left, right, opacity;
+}
+
+#circle{
+    top: -100px;
+    left: -100px;
+    border: 1px solid $brown;
+    height: 32px;
+    width: 32px;
+}
+
+#circle2{
+    background-color: $light-green; 
+    opacity: 0;
+    height: 16px;
+    width: 16px;
+}
+
+.link{
+    cursor: url('../assets/images/mouse.svg'), auto;
+}
+
+.app-container{
+    position: relative;
+}
+
+.home, .project{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
 }
 
 .home-enter, .home-appear{
-    .left{
-        opacity: 0;
-        @include breakpoint(mediumWidth){
-            transform: translateX(-10px);
-        }
-    }
-    
-    .right{
-        opacity: 0;
-        @include breakpoint(mediumWidth){
-            transform: translateX(-5px);
-        }
+    opacity: 0;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(-10px);
     }
 }
 
-.home-enter-active, .home-appear-active {
-    .left{
-        opacity: 1;
-        transform: translateX(0);
-        transition: .25s ease-in-out;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transition-delay: .65s;
-        }
-    }
-
-    .right{
-        opacity: 1;
-        transform: translateX(0);
-        transition: .25s ease-in-out;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transition-delay: .55s;
-        }
+.home-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: .25s ease-in-out;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transition-delay: .65s;
     }
 }
 
 .home-exit {
-    .left{
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .right{
-        opacity: 1;
-        transform: translateX(0);
-    }
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .home-exit-active {
-    .left{
-        opacity: 0;
-        transition: .25s;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transform: translateX(-5px);
-        }
+    opacity: 0;
+    transition: .25s;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(-5px);
     }
+}
+
+.project-enter, .project-appear{
+    opacity: 0;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(10px);
+    }
+}
+
+.project-enter-active, .project-appear-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: .25s ease-in-out;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transition-delay: .65s;
+    }
+}
+
+.project-exit {
+    opacity: 1;
+    transform: translateX(0);
     
-    .right{
-        opacity: 0;
-        transition: .25s;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transform: translateX(-10px);
-            transition-delay: .1s;
-        }
-    }
 }
 
-.projects-enter, .projects-appear{
-    .left, .back{
-        opacity: 0;
-        @include breakpoint(mediumWidth){
-            transform: translateX(10px);
-        }
-    }
-    
-    .right{
-        opacity: 0;
-        @include breakpoint(mediumWidth){
-            transform: translateX(5px);
-        }
+.project-exit-active {
+    opacity: 0;
+    transition: .25s;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(5px);
     }
 }
-
-.projects-enter-active, .projects-appear-active {
-    .left, .back{
-        opacity: 1;
-        transform: translateX(0);
-        transition: .25s ease-in-out;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transition-delay: .65s;
-        }
-    }
-
-    .right{
-        opacity: 1;
-        transform: translateX(0);
-        transition: .25s ease-in-out;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transition-delay: .55s;
-        }
-    }
-}
-
-.projects-exit {
-    .left, .back{
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .right{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.projects-exit-active {
-    .left, .back{
-        opacity: 0;
-        transition: .25s;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transform: translateX(5px);
-        }
-    }
-    
-    .right{
-        opacity: 0;
-        transition: .25s;
-        transition-property: opacity, transform;
-        @include breakpoint(mediumWidth){
-            transform: translateX(10px);
-            transition-delay: .1s;
-        }
-    }
-}
-
-
-@include breakpoint(mediumWidth){
-    .left, .right{
-        z-index: 2;
-    }
-  }
-  
-  .left{
-      margin: 10px 25px 20px 25px;
-  
-      @include breakpoint(mediumWidth){
-        position: fixed;
-        margin: 0 0 50px 50px;
-        width: calc(50% - 150px);
-        height: calc(100% - 50px);
-      }
-  
-      @include breakpoint(desktopWidth){
-        height: calc(100% - 75px);
-      }
-      
-  }
-  
-  .left h1{
-      margin-bottom: 5px;
-      font-size: 2.5em;
-  
-      @include breakpoint(mediumWidth){
-        font-size: 3em;
-      }
-  }
-  
-  .left .sub{
-      display: block;
-      font-size: 1.25em;
-  
-      @include breakpoint(mediumWidth){
-        font-size: 1.5em;
-      }
-  }
-  
-  .left p{
-      font-size: 1.5em;
-      font-style: italic;
-  
-      @include breakpoint(mediumWidth){
-        font-size: 2em;
-      }
-  }
-  
-  .text{
-    height: 40%;
-  }
-  
-  .right{
-      margin-left: 25px;
-      margin-right: 25px;
-      
-      @include breakpoint(mediumWidth){
-        width: calc(50% - 75px);
-        margin-left: 50%;
-      }
-  
-      @include breakpoint(desktopWidth){
-        margin-right: 50px;
-        width: calc(50% - 50px);
-      }
-  }
-  
-  .right h3{
-      margin-bottom: 20px;
-      font-style: italic;
-  }
-  
-  .right .selected{
-      margin-bottom: 75px;
-  }
   

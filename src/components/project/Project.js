@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import ProjectLinks from './ProjectLinks';
+import Helmet from 'react-helmet';
 import './Project.scss';
 import projects from '../../assets/projects.json';
 
-import maarc from '../../assets/images/maarc.jpeg';
+import maarc from '../../assets/images/maarc.png';
 import maarc2 from '../../assets/images/maarc2.png';
 
 import puzzle from '../../assets/images/puzzle.png';
@@ -23,25 +23,6 @@ import techpoint from '../../assets/images/techpoint.png';
 import techpoint2 from '../../assets/images/techpoint2.jpeg';
 
 const Project = (props) => {
-    useEffect(() => {
-        const page = document.getElementsByClassName('page')[0];
-        if(page){
-            page.classList.add('slideInReverse');
-            setTimeout(function () {
-                page.classList.remove('slideInReverse');
-            }, 500)
-        }
-
-        return () => {
-            if(page){
-                page.classList.remove('slideOutReverse');
-                setTimeout(function () {
-                    page.classList.add('slideOutReverse');
-                }, 500)
-            }
-        }
-    }, [])
-
     var image;
     var image2;
     switch (props.page){
@@ -74,32 +55,54 @@ const Project = (props) => {
     }
 
     return(
-        <div className="projects">
-            <Link to='/' className='back blue'><span>{"<"}</span> Home</Link>
-            <div className='left'>
-            <div className='text'>
-                <div className="sub-alt">{projects[props.page].tech.map((elem, index) => (elem + (index < projects[props.page].tech.length - 1 ? ", " : " ")))}</div>
-                <h1>{projects[props.page].title}</h1>
-                <p>{projects[props.page].description}</p>
-            </div>
-            </div>
-            <div className='right'>
-                <main className="project">
-                    <div>
-                        {projects[props.page].website && <a className="blue" href={projects[props.page].website} target="_blank" rel="noopener noreferrer">Visit website</a>}
+        <>
+            <Helmet>
+                <title>{projects[props.page].title}</title>
+                <meta name="description" content={projects[props.page].description} />
+            </Helmet>
+            <main className="project">
+                <nav className='projects-nav'>
+                    <Link to='/' className='link'><span>{"<"}</span> home</Link>
+                </nav>
+                <header>
+                    <h1>{projects[props.page].title}</h1>
+                    <div>{projects[props.page].description}</div>
+                    <ul className="tech-list">{projects[props.page].tech.map((elem) => <li key={elem} className='tech'>{elem}</li>)}</ul>
+                </header>
+                <div className='project-description'>
+                    <div className='section'>
                         <p>
-                            {projects[props.page].p1}
+                        {projects[props.page].website && <a className='link' href={projects[props.page].website} target="_blank" rel="noopener noreferrer">{projects[props.page].websiteText}</a>}
+                        {projects[props.page].p1}
                         </p>
-                        {projects[props.page].image1 && <img src={image} alt={projects[props.page].alt1}/>}
-                        {projects[props.page].p2 && <p>
-                            {projects[props.page].p2}
-                        </p>}
-                        {projects[props.page].image2 && <img src={image2} alt={projects[props.page].alt2}/>}
+                        {projects[props.page].image1 && 
+                            <figure>
+                                <img src={image} alt=""/>
+                                <figcaption>{projects[props.page].alt1}</figcaption>
+                            </figure>
+                        }
                     </div>
-                </main>
-                <ProjectLinks page={props.page}/>
-            </div>
-        </div>
+                    <div className='section-reverse'>
+                        <p>
+                            {projects[props.page].p2}
+                        </p>        
+                        {projects[props.page].image2 && 
+                            <figure>
+                                <img src={image2} alt=""/>
+                                <figcaption>{projects[props.page].alt2}</figcaption>
+                            </figure>
+                        }
+                    </div>
+                </div>
+                <nav className='projects-nav space-between'>
+                    <Link to={Object.keys(projects).findIndex((elem) => elem === props.page) - 1 > -1 ? Object.keys(projects)[Object.keys(projects).findIndex((elem) => elem === props.page) - 1] : Object.keys(projects)[Object.keys(projects).length - 1]} className='link'><span>{"<"}</span> previous</Link>
+                    <Link to={Object.keys(projects).length > Object.keys(projects).findIndex((elem) => elem === props.page) + 1 ? Object.keys(projects)[Object.keys(projects).findIndex((elem) => elem === props.page) + 1] : Object.keys(projects)[0]} className='link'>next <span>{">"}</span></Link>
+                </nav>
+                <footer>
+                    <ul className="projects-list-nav">{Object.keys(projects).map((project, index) => <li key={project}><Link className={project === props.page ? "bold link" : "link"} to={project}>{projects[project].link}</Link> {index < Object.keys(projects).length - 1 ? <div>•</div> : ""}</li>)}</ul>
+                </footer>
+            </main>
+        </>
 )};
  
 export default Project;

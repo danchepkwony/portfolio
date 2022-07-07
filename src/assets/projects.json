@@ -1,16 +1,17 @@
 {
     "maarc":{
-        "title": "Muncie Afghan Refugee Resettlement",
+        "title": "Afghan Refugee Resettlement",
         "link": "MAARC",
         "tech": ["React Typescript", "CSS"],
-        "description": "Collecting online donations for a nonprofit",   
-        "p1": "The Afghan Women's And Kids' Education and Necessities Organization (AWAKEN) needed a website in the midst of the Afghanistan Refugee Crisis in 2021. The Digital Corps had students volunteer to help build their website.",
-        "p2": "We spent only a day working on the project and a week to polish any bugs. I worked on the About page with React Typescript and CSS.",
+        "description": "Collecting online donations for a nonprofit",
+        "p1": " in the midst of the Afghanistan Refugee Crisis in 2021. The Digital Corps had students volunteer to help build their website. We spent only a day working on the project and a week to polish any bugs. I worked on the About page with React Typescript and CSS.",
+        "p2": "Though I was used to using React, this was the first time I had used Typescript with React. In addition, we only had a day to get it to as close to completion as we could. I ran into an issue with git flow, which was made worse by the time crunch and multiple developers working at once. With the help of my coworkers, I was able to fix my local repo and finish my components.",
         "image1": true,
         "image2": true,
         "alt1": "Refugees arriving in Muncie",
-        "alt2": "Code",
-        "website": "https://www.awakeninc.org/"
+        "alt2": "Code Snippet",
+        "website": "https://www.awakeninc.org/",
+        "websiteText": "The Afghan Women's And Kids' Education and Necessities Organization (AWAKEN) needed a website"
     },
     "puzzle":{
         "title": "Puzzle Wall",
@@ -18,23 +19,25 @@
         "tech": ["Unity", "C#"],
         "description": "A multiplayer TV Board puzzle game",
         "p1": "David Letterman is an alumni and prominent donor to Ball State University. The Letterman Experience Lab at Ball State wanted to build an interactive Letterman-themed puzzle game that included fun facts about David Letterman’s career. The Digital Corps was given the concept and tasked with developing the game.",
-        "p2": "We used Unity where scripts are written in C#. I worked with other developers to implement the fun fact panel, the puzzle functionality, and the ending video.",
+        "p2": "We used Unity where scripts are written in C#. I worked with other developers to implement the fun fact panel, the puzzle functionality, and the ending video. This was one of the first projects I got to work on at the Digital Corps. At the time, I didn’t think any code I wrote was worth implementing in a real application. Getting to work on one of my first real projects boosted my faith in my skills.",
         "image1": true,
         "image2": true,
-        "alt1": "Puzzle Wall Mockup"
+        "alt1": "David Letterman Learning Experience Lab",
+        "alt2": "Puzzle Wall Mockup"
     },
     "sportslink":{
         "title": "Sportslink Application Form",
         "link": "Sportslink",
         "tech": ["React Javascript", "Azure Functions", "C#"],
         "description": "Sending application information to Google Sheets",
-        "p1": "Sportslink at Ball State University needed a new application form and a better way to keep track of the applications they received. We decided to create a Google Sheet with some conditional logic so the Sportslink staff could filter through applicants easily and wouldn't need future support.",
+        "p1": " and a better way to keep track of the applications they received. We decided to create a Google Sheet with some conditional logic so the Sportslink staff could filter through applicants easily and wouldn't need future support.",
         "p2": "After getting guidance from the staff on how to format the Google Sheet, I created a Google Form, connected it to the Google Sheet, and created an Azure Function that would store any files they submitted to Blob Storage then post the link and other fields to the Google Form. Then, I used React Javascript to write the basic functionality for the frontend.",
         "image1": true,
         "image2": true,
-        "alt1": "Slack App",
-        "alt2": "Code",
-        "website": "https://ballstatesportslink.com/new-application-page/"
+        "alt1": "Application Form",
+        "alt2": "Code Snippet",
+        "website": "https://ballstatesportslink.com/new-application-page/",
+        "websiteText": "Sportslink at Ball State University needed a new application form"
     },
     "slack":{
         "title": "Status Board Slack App",
@@ -46,7 +49,7 @@
         "image1": true,
         "image2": true,
         "alt1": "Slack App",
-        "alt2": "Code"
+        "alt2": "Code Snippet"
     },
     "lsamp":{
         "title": "LSAMP Research",
@@ -54,23 +57,24 @@
         "tech": ["C/C++", "ROOT", "Machine Learning"],
         "description": "Sending application information to Google Sheets",
         "p1": "I did research with Louis Stokes Alliance for Minority Participation. I worked with Dr. Skoby at Ball State University to research ROOT, a software framework for data analysis, so we could implement machine learning on physics data.",
-        "p2": "The end goal is to create a machine learning model that is capable of classifying particle species in heavy-ion collisions. Which was gibberish to me until working with Dr.Skoby. After understanding the usage of the framework and how to analyze its results, future researchers can implement the framework.",
+        "p2": "The end goal is to create a machine learning model that is capable of classifying particle species in heavy-ion collisions, which was gibberish to me until working with Dr.Skoby. Being able to predict particle species from heavy-ion collisions would allow us to understand how elementary particles behaved shortly after the Big Bang. With the research we did establishing usage of the framework and how to analyze its results, future researchers can realize the machine learning model we aim to create.",
         "image1": true,
         "image2": true,
         "alt1": "Research Poster",
-        "alt2": "Code"
+        "alt2": "Code Snippet"
     },
     "techpoint":{
         "title": "Techpoint SOS Challenge",
         "link": "Techpoint",
         "tech": ["React Javascript", "Firebase DB", "Firebase Auth"],
         "description": "Creating a telehealth website for a hackathon",
-        "p1": "Techpoint hosted a hackathon at the start of the COVID outbreak for Indiana students to come up with and prototype ideas to support local businesses/industries. Our group was tasked with creating a telehealth application that would help doctors and patients communicate. We came up with myHealthRadar.",
+        "p1": " at the start of the COVID outbreak for Indiana students to come up with and prototype ideas to support local businesses/industries. Our group was tasked with creating a telehealth application that would help doctors and patients communicate. We came up with myHealthRadar.",
         "p2": "myHealthRadar is a telehealth service that can be linked to health monitoring devices. It creates an easy-to-understand visual depiction of patients' electronic health records in order for the patient to independently track their chronic conditions from home. Our program promotes being health conscious in the midst of the pandemic while allowing its users to stay home and stay healthy. I created the prototype as a React app.",
         "image1": true,
         "image2": true,
         "alt1": "myHealthRadar Logo",
         "alt2": "Teammates",
-        "website": "https://devpost.com/software/connect-tech-telehealth-team-4"
+        "website": "https://devpost.com/software/connect-tech-telehealth-team-4",
+        "websiteText": "Techpoint hosted a hackathon"
     }
 }
