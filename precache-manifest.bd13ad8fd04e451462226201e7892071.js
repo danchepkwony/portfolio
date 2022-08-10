@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d1d115795354bac22d200d12d2517f3",
+    "revision": "67e993c9a481929b4b7a830ba993f7c4",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "85586f503ea55e5b4d31",
-    "url": "/portfolio/static/css/main.53c9fc20.chunk.css"
+    "revision": "55dacd0dd94e38ac17e3",
+    "url": "/portfolio/static/css/main.189ee5c8.chunk.css"
   },
   {
-    "revision": "6a1fb24af0a348da507d",
-    "url": "/portfolio/static/js/2.85d7d4e1.chunk.js"
+    "revision": "ce77d8ad17939516909f",
+    "url": "/portfolio/static/js/2.f7c1c698.chunk.js"
   },
   {
-    "revision": "943882469e83e6eb295f46d8b1eb0b5b",
-    "url": "/portfolio/static/js/2.85d7d4e1.chunk.js.LICENSE.txt"
+    "revision": "d00d8a7fc85297e60e1e06021a7cd31c",
+    "url": "/portfolio/static/js/2.f7c1c698.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "85586f503ea55e5b4d31",
-    "url": "/portfolio/static/js/main.72fe7f23.chunk.js"
+    "revision": "55dacd0dd94e38ac17e3",
+    "url": "/portfolio/static/js/main.cc97b065.chunk.js"
   },
   {
     "revision": "7a6cc99bd8f08f9fa6ec",
@@ -100,55 +100,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/github.5b1d13c4.svg"
   },
   {
-    "revision": "e02630168d7c83efc45aa082ab4ff12a",
-    "url": "/portfolio/static/media/lsamp.5066e9cc.png"
-  },
-  {
-    "revision": "f135d907688065d2b5e47f305a0db444",
-    "url": "/portfolio/static/media/lsamp2.c6037e73.png"
-  },
-  {
-    "revision": "126812cd472e8fdf5a52eaa9432d5c00",
-    "url": "/portfolio/static/media/maarc.035a25b2.png"
-  },
-  {
-    "revision": "864e1585037d3b1717bb74f7e269f46f",
-    "url": "/portfolio/static/media/maarc2.44bda214.png"
-  },
-  {
     "revision": "d09578dbc1a27ee5dded6bf4bb80413a",
     "url": "/portfolio/static/media/mouse.d09578db.svg"
   },
   {
-    "revision": "b5728b870f41b805c64a016f39ca073f",
-    "url": "/portfolio/static/media/puzzle.f5d6b11a.png"
-  },
-  {
-    "revision": "28daa540457b745499f8467bb4dcae03",
-    "url": "/portfolio/static/media/puzzle2.7066092d.png"
-  },
-  {
-    "revision": "d030539d2d7354020f1d3d7840413615",
-    "url": "/portfolio/static/media/slack.1de63a5d.png"
-  },
-  {
-    "revision": "b673cc8da3af1b5c33321d61513b975e",
-    "url": "/portfolio/static/media/slack2.58b41b3d.png"
-  },
-  {
-    "revision": "1cc30dd2c05688b68c693353a48594ed",
-    "url": "/portfolio/static/media/sportslink.ec1228eb.png"
-  },
-  {
-    "revision": "95ea4a2983a466bc74460b98f9ecc199",
-    "url": "/portfolio/static/media/sportslink2.e9db54d5.png"
-  },
-  {
-    "revision": "0af9733dd3d41cad2a0c8253d34e5bfb",
-    "url": "/portfolio/static/media/techpoint.04016ae4.png"
-  },
-  {
-    "revision": "65e9ea6f1f388fe80bf3ecfa18bb93fe",
-    "url": "/portfolio/static/media/techpoint2.14686edb.jpeg"
+    "revision": "b2e4f62d7a83ced802cdf9cbe8402e7e",
+    "url": "/portfolio/static/media/web.b2e4f62d.svg"
   }
 ]);
