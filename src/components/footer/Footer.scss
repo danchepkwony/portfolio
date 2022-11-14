@@ -1,0 +1,40 @@
+@import "../../variables";
+
+.footer{
+    padding: 0 50px 100px 50px;
+
+    div{
+        display: flex;
+    }
+
+    a{
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-right: 50px;
+
+        @include breakpoint(tabletWidth){
+            margin-right: 60px;
+        }
+
+        @include breakpoint(wideTabletWidth){
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    img{
+       height: 100%;
+        width: 100%;
+    }
+
+    .dark{
+        -webkit-filter: invert(100%);
+                filter: invert(100%);
+    }
+
+    .light{
+        -webkit-filter: invert(20%);
+                filter: invert(20%);
+    }
+}

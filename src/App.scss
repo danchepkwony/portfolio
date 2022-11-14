@@ -1,0 +1,165 @@
+@import './variables';
+
+@media (min-width: 1730px){
+    body{
+		max-width: 1730px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 30px;
+	}
+}
+
+body{
+    background-color: $bgColor;
+    transition: background-color .25s ease;
+}
+
+h1, h2{
+    font-family: "Poppins";
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+p{
+    font-family: "Poppins";
+    letter-spacing: .05em;
+}
+
+.app-container{
+    position: relative;
+}
+
+.circle-container{
+    display: none;
+    pointer-events: none;
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(-48px, -48px, 0);
+    transition: transform .05s ease;
+
+    @include breakpoint(tabletWidth) {
+        display: block;
+    }
+}
+
+#circle, #circle2{
+    position: absolute;
+    border-radius: 50%;
+}
+
+#circle{
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+#circle2{
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+#circle{
+    top: -20px;
+    left: -20px;
+    border: 1px solid $text-color;
+    height: 48px;
+    width: 48px;
+}
+
+#circle2{
+    top: -12px;
+    left: -12px;
+    background-color: $light-green; 
+    opacity: 0;
+    height: 32px;
+    width: 32px;
+}
+
+.link{
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+
+    @include breakpoint(tabletWidth) {
+        cursor: url('./assets/images/mouse.svg'), auto;  
+    }
+}
+
+.spaced {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.home, .project{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: $bgColor;
+    transition: background-color .25s ease;
+}
+
+.home-enter, .home-appear{
+    opacity: 0;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(-10px);
+    }
+}
+
+.home-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: .25s ease-in-out;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transition-delay: .65s;
+    }
+}
+
+.home-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.home-exit-active {
+    opacity: 0;
+    transition: .25s;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(-5px);
+    }
+}
+
+.project-enter, .project-appear{
+    opacity: 0;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(10px);
+    }
+}
+
+.project-enter-active, .project-appear-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: .25s ease-in-out;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transition-delay: .65s;
+    }
+}
+
+.project-exit {
+    opacity: 1;
+    transform: translateX(0);
+    
+}
+
+.project-exit-active {
+    opacity: 0;
+    transition: .25s;
+    transition-property: opacity, transform;
+    @include breakpoint(wideTabletWidth){
+        transform: translateX(5px);
+    }
+}

@@ -2,7 +2,7 @@
     "maarc":{
         "title": "Afghan Refugee Resettlement",
         "link": "MAARC",
-        "tech": ["React Typescript", "CSS"],
+        "tech": ["React TypesSript", "CSS"],
         "description": "Collecting online donations for a nonprofit",
         "p1": " in the midst of the Afghanistan Refugee Crisis in 2021. The Digital Corps had students volunteer to help build their website. We spent only a day working on the project and a week to polish any bugs. I worked on the About page with React Typescript and CSS.",
         "p2": "Though I was used to using React, this was the first time I had used Typescript with React. In addition, we only had a day to get it to as close to completion as we could. I ran into an issue with git flow, which was made worse by the time crunch and multiple developers working at once. With the help of my coworkers, I was able to fix my local repo and finish my components.",
@@ -12,6 +12,19 @@
         "alt2": "Code Snippet",
         "website": "https://www.awakeninc.org/",
         "websiteText": "The Afghan Women's And Kids' Education and Necessities Organization (AWAKEN) needed a website"
+    },
+    "bobross":{
+        "title": "Bob Ross Painting Builder",
+        "link": "Bob Ross",
+        "tech": ["React JavaScript", "CSS", "PHP", "Wordpress"],
+        "description": "Making happy little paintings in your web browser",
+        "p1": "Happy Little Paintings was a plugin created by Digital Corps students for PBS’s local website. We cut out assets from Bob Ross paintings and created a drag-and-drop painting builder. I worked with another developer to write the plugin that would add the game to the website. ",
+        "p2": "I worked on the sharing functionality, the custom scrollbar, the asset bank, and styling. The custom scrollbar was more challenging than expected because of incompatibility on some browsers. The sharing functionality was also more difficult than expected because the site was too large to be loaded by social media sharing web scrapers. For example, Twitter reads certain meta tags to create a share card. The site was too large to be fetched, so the meta tags were not picked up. We had to create a separate page with only the meta tags and final painting for the sharing functionality to work. This project taught me that no task is as simple as it seems and how to come up with creative solutions.",
+        "image1": true,
+        "image2": true,
+        "alt1": "Website Opening",
+        "alt2": "Painting Builder",
+        "website": "https://ballstatepbs.org/bob-ross-painting-builder/"
     },
     "puzzle":{
         "title": "Puzzle Wall",
@@ -28,7 +41,7 @@
     "sportslink":{
         "title": "Sportslink Application Form",
         "link": "Sportslink",
-        "tech": ["React Javascript", "Azure Functions", "C#"],
+        "tech": ["React JavaScript", "Azure Functions", "C#"],
         "description": "Sending application information to Google Sheets",
         "p1": " and a better way to keep track of the applications they received. We decided to create a Google Sheet with some conditional logic so the Sportslink staff could filter through applicants easily and wouldn't need future support.",
         "p2": "After getting guidance from the staff on how to format the Google Sheet, I created a Google Form, connected it to the Google Sheet, and created an Azure Function that would store any files they submitted to Blob Storage then post the link and other fields to the Google Form. Then, I used React Javascript to write the basic functionality for the frontend.",
@@ -43,8 +56,8 @@
         "title": "Status Board Slack App",
         "link": "Slack Status",
         "tech": ["Azure Functions", "C#", "MySQL"],
-        "description": "Researching a data analysis framework with a physics professor",
-        "p1": "When the Digital Corps went remote, we needed a way to keep track of which employees/staff were on and off the clock. Our staff set up the database, deployed the functions, and created the frontend display. I worked on the Azure Functions with C# and fetched data from our MySQL database.",
+        "description": "Displaying availability during remote work",
+        "p1": "When the Digital Corps went remote, we needed a way to display which employees/staff were on and off the clock. Our staff set up the database, deployed the functions, and created the frontend display. I worked on the Azure Functions with C# and fetched data from our MySQL database.",
         "p2": "In order to write the functions, I had to research how to create slash commands for a Slackbot, how to direct that slash command to Azure, and how to parse and send that data to our frontend. I followed some tutorials and created example Slackbots before working on the final one.",
         "image1": true,
         "image2": true,
@@ -55,26 +68,13 @@
         "title": "LSAMP Research",
         "link": "LSAMP",
         "tech": ["C/C++", "ROOT", "Machine Learning"],
-        "description": "Sending application information to Google Sheets",
+        "description": "Researching a data analysis framework with a physics professor",
         "p1": "I did research with Louis Stokes Alliance for Minority Participation. I worked with Dr. Skoby at Ball State University to research ROOT, a software framework for data analysis, so we could implement machine learning on physics data.",
         "p2": "The end goal is to create a machine learning model that is capable of classifying particle species in heavy-ion collisions, which was gibberish to me until working with Dr.Skoby. Being able to predict particle species from heavy-ion collisions would allow us to understand how elementary particles behaved shortly after the Big Bang. With the research we did establishing usage of the framework and how to analyze its results, future researchers can realize the machine learning model we aim to create.",
         "image1": true,
         "image2": true,
         "alt1": "Research Poster",
-        "alt2": "Code Snippet"
-    },
-    "techpoint":{
-        "title": "Techpoint SOS Challenge",
-        "link": "Techpoint",
-        "tech": ["React Javascript", "Firebase DB", "Firebase Auth"],
-        "description": "Creating a telehealth website for a hackathon",
-        "p1": " at the start of the COVID outbreak for Indiana students to come up with and prototype ideas to support local businesses/industries. Our group was tasked with creating a telehealth application that would help doctors and patients communicate. We came up with myHealthRadar.",
-        "p2": "myHealthRadar is a telehealth service that can be linked to health monitoring devices. It creates an easy-to-understand visual depiction of patients' electronic health records in order for the patient to independently track their chronic conditions from home. Our program promotes being health conscious in the midst of the pandemic while allowing its users to stay home and stay healthy. I created the prototype as a React app.",
-        "image1": true,
-        "image2": true,
-        "alt1": "myHealthRadar Logo",
-        "alt2": "Teammates",
-        "website": "https://devpost.com/software/connect-tech-telehealth-team-4",
-        "websiteText": "Techpoint hosted a hackathon"
+        "alt2": "Code Snippet",
+        "github": "https://github.com/danchepkwony/rootPractice"
     }
 }

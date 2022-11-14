@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.canvas{
+    background-color: $bgColor;
+    position: absolute;
+    right: 0;
+
+    transition: background-color .25s ease;
+}

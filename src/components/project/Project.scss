@@ -1,154 +1,91 @@
-@import '../variables';
+@import '../../variables';
 
 .project{
-    margin: 0 auto 25px auto;
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    margin-bottom: 40px;
+    padding: 20px 30px;
+    border: 1px $text-color solid;
+    border-radius: 10px;
+    transition: top .5s, left .5s, box-shadow .5s;
 
-    > *{
-        padding: 0 50px;
-    }
-
-    .projects-nav {
-        margin-bottom: 10px;
-    }
-
-    .projects-nav a{
-        color: black;
-        font-size: 1.5em;
-    }
-
-    header h1{
-        color: black;
-        font-size: 2.75em;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-    }
-
-    header div{
-        font-style: italic;
-        font-size: 1.5em;
-    }
-
-    .tech-list{
-        display: flex;
-        list-style: none;
-        margin: 10px 0;
-    }
-
-    .tech{
-        font-family: "Kollektif";
-        font-size: 1em;
-        background-color: $light-green;
-        margin-right: 10px;
-        padding: 5px;
-
-        @include breakpoint(desktopWidth){
-            margin-right: 20px;
-            font-size: 1.5em;
-        }
-    }
-
-    .project-description{
-        font-size: 1.5em;
-    }
-    
-    .project-description div > *{
-        margin: 20px 0;
-    }
-
-    .project-description div .link{
-        text-decoration: underline;
-        color: #2c8226;
-    }
-
-    img{
-        width: 100%;
-        max-height: 300px;
-        object-fit: cover;
-        margin-bottom: 5px;
-    }
-
-    figcaption{
-        font-style: italic;
-        font-size: .75em;
-    }
-
-    @include breakpoint(wideTabletWidth){
-        .project-description{
-            font-size: 1.75em;
-        }
-        
-        .project-description div > *{
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        .project-description > div{
-            display: flex;
-            margin: 50px 0 75px 0;
-
-            p, figure{
-                width: calc(50% - 20px);
-            }
-        }
-
-        .section{
-            p{
-                margin-right: 20px;
-            }
-
-            figure{
-                margin-left: 20px;
-            } 
-        }
-
-        .section-reverse{
-            flex-flow: row-reverse;
-
-            p{
-                margin-left: 20px;
-            }
-
-            figure{
-                margin-right: 20px;
-            } 
-        }
-        
-        img{
-            max-height: 300px;
-        }
-    }
-
-    .projects-list-nav{
-        display: flex;
-        list-style: none;
-        margin: 40px 0;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .projects-list-nav li{
-        display: flex;
-    }
-
-    .projects-list-nav a{
-        font-family: "Kollektif";
-        color: black;
-    }
-
-    .bold{
-        font-weight: 700
-    }
-
-    .projects-list-nav div{
-        margin: 0 5px;
-        @include breakpoint(tabletWidth){
-            margin: 0 10px;
-        }
-    }
-
-    .space-between{
+    .header{
         display: flex;
         justify-content: space-between;
+
+        h2{
+            font-size: 1.2em;
+
+            @include breakpoint(tabletWidth) {
+                font-size: 1.6em
+            }
+        }
+
+        #project-arrow{
+            width: 20px;
+            transition: transform .25s ease;
+
+            @include breakpoint(tabletWidth) {
+                width: 30px;
+            }
+        }
+
+        .flip{
+            transform: rotateZ(180deg);
+        }
+    }
+    
+    .description:hover{
+        will-change: max-height;
+    }
+
+    .description{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .25s ease;
+        
+        ul{
+            display: flex;
+            margin: 15px 0 10px 0;
+    
+            li{
+                display: unset;
+                margin-right: 10px;
+                padding: 7.5px 10px; 
+                background-color: $light-green;
+                border-radius: 7.5px;
+                font-size: 1em;
+                font-family: "Poppins";
+                color: $alt-text-color;
+            }
+        }
+        
+        .content{
+            margin-bottom: 10px;
+        }
+
+        p{
+            margin: 20px 50px 20px 0;
+            font-size: 1.25em;
+            line-height: 1.5em;
+            color: $alt-text-color;
+        }
+
+        .links{
+            display: flex;
+
+            a{  
+                display: block;
+                cursor: unset;
+
+                img{
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 25px;
+                }
+            }
+        }
     }
 }
-

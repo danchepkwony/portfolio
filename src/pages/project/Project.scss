@@ -1,0 +1,191 @@
+@import '../../variables';
+
+.project {
+    position: inherit;
+    max-width: 1000px;
+    margin: 0 auto 25px auto;
+    padding-top: 30px;
+
+    >* {
+        padding: 0 50px;
+    }
+
+    .projects-nav {
+        margin-bottom: 10px;
+    }
+
+    .projects-nav a {
+        color: $text-color;
+        font-size: 1.5em;
+        font-family: "Poppins";
+    }
+
+    header {
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-family: 'Signore';
+        font-size: 3em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $text-color;
+    }
+
+    header div {
+        margin-bottom: 10px;
+        font-style: italic;
+        font-size: 1.5em;
+    }
+
+    .tech-list {
+        display: flex;
+        list-style: none;
+        margin-top: 10px;
+    }
+
+    .tech {
+        position: relative;
+        padding-right: 20px;
+        border-radius: 5px;
+        font-family: 'Poppins';
+        font-size: 1.25em;
+        font-weight: 4;
+        color: $alt-text-color;
+
+        @include breakpoint(desktopWidth) {
+            font-size: 1.25em;
+        }
+    }
+
+    .tech::after {
+        position: absolute;
+        right: 6px;
+        content: "•";
+    }
+
+    .tech:last-child::after {
+        content: "";
+    }
+
+    .links {
+        margin-top: 15px;
+        display: flex;
+
+        a {
+            display: block;
+            cursor: unset;
+
+            img {
+                width: 24px;
+                height: 24px;
+                margin-right: 25px;
+
+                @include breakpoint(desktopWidth) {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    .dark {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
+
+    .light {
+        -webkit-filter: invert(20%);
+        filter: invert(20%);
+    }
+
+    .project-description {
+        font-size: 1.5em;
+        color: $alt-text-color;
+    }
+
+    .project-description div > * {
+        margin: 20px 0;
+    }
+
+    .project-description div .link {
+        text-decoration: underline;
+        color: $about-links;
+    }
+
+    .project-description img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        margin-bottom: 5px;
+
+        @include breakpoint(desktopWidth) {
+            max-height: 600px;
+        }
+    }
+
+    figcaption {
+        font-style: italic;
+        font-size: .75em;
+
+        @include breakpoint(desktopWidth) {
+            font-size: 1em;
+        }
+    }
+
+    @include breakpoint(wideTabletWidth) {
+        .project-description {
+            font-size: 1.3em;
+            line-height: 1.5em;
+        }
+
+        .project-description div p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .project-description>div {
+            margin: 30px 0 40px 0;
+        }
+
+        img {
+            max-height: 300px;
+        }
+    }
+
+    .projects-list-nav {
+        display: flex;
+        list-style: none;
+        margin: 40px 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .projects-list-nav li {
+        display: flex;
+        align-items: center;
+        color: $alt-text-color;
+    }
+
+    .projects-list-nav a {
+        font-family: "Poppins";
+        color: $alt-text-color;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    .projects-list-nav div {
+        margin: 0 5px;
+
+        @include breakpoint(tabletWidth) {
+            margin: 0 10px;
+        }
+    }
+
+    .space-between {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,33 @@
+@import "../../variables";
+
+.about {
+    padding: 50px 50px 10px 50px;
+
+    h1{
+        font-size: 1.75em;
+        margin-bottom: 40px;
+        color: $alt-text-color;
+    }
+
+    p{
+        padding-bottom: 20px;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        color: $alt-text-color;
+    }
+  
+    .about-links{
+        margin-top: 20px;
+
+        a{
+            letter-spacing: .1em;
+            color: $about-links;
+            text-decoration: underline;
+            display: block;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            margin: 10px 0;
+        }
+    }
+}

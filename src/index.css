@@ -1,9 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
 
+/* Luke Lowrey - Theme Switching https://lukelowrey.com/css-variable-theme-switcher/ */
+
 :root {
-  overscroll-behavior: none;
+  scroll-behavior: smooth;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
   overflow-x: hidden;
-  cursor: url('../src/assets/images/mouse.svg'), auto;
+  background-color: var(--background-color);
+
+  --background-color: #1A1A1A;
+  --text-color: #FFFFFF;
+  --alt-text-color: #CCCCCC;
+  --about-links: #B9FFAD;
+}
+
+html[data-theme='light'] {
+    --background-color: #fff;
+    --text-color: #1a1a1a;
+    --alt-text-color: #606060;
+    --about-links: #288654;
+}
+
+html[data-theme='dark'] {
+    --background-color: #1A1A1A;
+    --text-color: #FFFFFF;
+    --alt-text-color: #CCCCCC;
+    --about-links: #B9FFAD;
+}
+
+@media only screen and (min-width: 768px) { 
+  :root{
+    cursor: url('../src/assets/images/mouse.svg'), auto;
+  }
 }
 
 body {
